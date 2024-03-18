@@ -1,0 +1,133 @@
+import torch
+import torch.nn as nn
+from torchsummary import summary
+
+'''
+/****************************************************/
+深度可分离卷积
+/****************************************************/
+'''
+# ----------------------------------------------------#
+#           共享卷积
+# ----------------------------------------------------#
+
+class sharedwiseSeparableConv(nn.Module):
+    def __init__(self, in_channels, out_channels, stride):
+        super().__init__()
+
+        self.in_channels = in_channels
+        self.sharedwise = nn.Sequential(
+            nn.Conv2d(1, 1, kernel_size=3, stride=stride, padding=1, bias=False),
+            nn.BatchNorm2d(1),
+            nn.ReLU(inplace=True),
+        )
+
+
+    def forward(self, x):
+        channel_tensors = torch.chunk(x, self.in_channels, dim=1)
+        for i, channel_tensor in enumerate(channel_tensors):
+            if i == 0:
+                x_shared = self.sharedwise(channel_tensor)
+            else:
+                shared = self.sharedwise(channel_tensor)
+                x_shared = torch.cat([x_shared, shared], dim=1)
+        #x_depthwise = self.depthwise(x)
+        # x = torch.cat([x_shared, x_depthwise], dim=1)
+        x = self.pointwise(x_shared)
+        return x
+
+# ----------------------------------------------------#
+#           深度可分离卷积层
+# ----------------------------------------------------#
+
+class DepthwiseSeparableConv(nn.Module):
+    def __init__(self, in_channels, out_channels, stride):
+        super().__init__()
+        # depthwise convolution
+        # self.depthwise = nn.Sequential(
+        #     nn.Conv2d(in_channels, in_channels, kernel_size=3, stride=stride, padding=1, groups=in_channels,
+        #               bias=False),
+        #     nn.BatchNorm2d(in_channels),
+        #     nn.ReLU(inplace=True),
+        # )
+
+        self.in_channels = in_channels
+        self.sharedwise = nn.Sequential(
+            nn.Conv2d(1, 1, kernel_size=3, stride=stride, padding=1, bias=False),
+            nn.BatchNorm2d(1),
+            nn.ReLU(inplace=True),
+        )
+        # pointwise convolution
+        self.pointwise = nn.Sequential(
+            nn.Conv2d(in_channels, out_channels, kernel_size=1, stride=1, padding=0, bias=False),
+            nn.BatchNorm2d(out_channels),
+            nn.ReLU(inplace=True),
+        )
+
+    def forward(self, x):
+        channel_tensors = torch.chunk(x, self.in_channels, dim=1)
+        for i, channel_tensor in enumerate(channel_tensors):
+            if i == 0:
+                x_shared = self.sharedwise(channel_tensor)
+            else:
+                shared = self.sharedwise(channel_tensor)
+                x_shared = torch.cat([x_shared, shared], dim=1)
+        #x_depthwise = self.depthwise(x)
+        # x = torch.cat([x_shared, x_depthwise], dim=1)
+        x = self.pointwise(x_shared)
+        return x
+
+
+'''
+/****************************************************/
+MobileNetV1
+/****************************************************/
+'''
+
+
+# ----------------------------------------------------#
+#           MobileNetV1
+# ----------------------------------------------------#
+class MyNet(nn.Module):
+    def __init__(self, ch_in=3, n_classes=1000):
+        super().__init__()
+
+        # Start Conv
+        self.conv1 = nn.Sequential(
+            nn.Conv2d(in_channels=ch_in, out_channels=32, kernel_size=3, stride=2, padding=1, bias=False),
+            nn.BatchNorm2d(num_features=32),
+            nn.ReLU(inplace=True)
+        )
+
+        # DepthwiseSeparableConv blocks
+        self.conv_dw = nn.Sequential(
+            DepthwiseSeparableConv(in_channels=32, out_channels=64, stride=1),
+            DepthwiseSeparableConv(64, 128, 2),
+            DepthwiseSeparableConv(128, 128, 1),
+            DepthwiseSeparableConv(128, 256, 2),
+            DepthwiseSeparableConv(256, 256, 1),
+            DepthwiseSeparableConv(256, 512, 2),
+            DepthwiseSeparableConv(512, 512, 1),
+        )
+
+        self.AvgPool2d = nn.AdaptiveAvgPool2d(output_size=1)
+
+        self.classifier = nn.Linear(512, n_classes)
+
+    def forward(self, x):
+        x = self.conv1(x)  # out: batch_size * 32 * 112 * 112
+        x = self.conv_dw(x)  # out: B * 1024 * 7 * 7
+        x = x.mean(3).mean(2)  # x = self.AvgPool2d(x)  # out: B * 1024 (global avg pooling)
+        x = self.classifier(x)  # out: B * 1000
+        return x
+
+
+if __name__ == '__main__':
+    # model check
+    model = MyNet(ch_in=3, n_classes=1000)
+    print(model)
+    summary(model, input_size=(3, 224, 224), device='cpu')
+
+    input = torch.randn(1, 3, 224, 224)
+    output = model(input)
+    print(output.shape)
