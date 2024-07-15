@@ -26,7 +26,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/Git/Image-Fusion/DeepFuse"
+    "last_opened_file_path": "E:/project/Image_Fusion/DenseFuse"
   }
 }]]></component>
   <component name="RunManager">
@@ -68,6 +68,7 @@
       <updated>1708580179217</updated>
       <workItem from="1708580180451" duration="35000" />
       <workItem from="1721023668494" duration="608000" />
+      <workItem from="1721024968551" duration="41000" />
     </task>
     <servers />
   </component>
