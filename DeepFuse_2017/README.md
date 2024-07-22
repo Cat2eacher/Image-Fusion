@@ -7,7 +7,9 @@
 * 参考项目：
   - [DeepFuse.pytorch](https://github.com/SunnerLi/DeepFuse.pytorch) 主要学习了这里的代码。
   - [sndnshr/DeepFuse](https://github.com/sndnshr/DeepFuse)
-
+* 百度网盘：
+  - 链接：https://pan.baidu.com/s/12cvVquASeokZ7xkvM7sHeA?pwd=scp0 
+  - 提取码：scp0
 
 ## 文件结构
 ```shell
