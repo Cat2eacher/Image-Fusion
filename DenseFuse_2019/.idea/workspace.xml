@@ -1,225 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bfeafc9a-37fe-4eb6-91ea-92a62240f9e7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../DeepFuse/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/.idea/DenseFuse.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/configs.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_35.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_36.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_41.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_45.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_46.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_49.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_Road/fusion_9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_TNO/fusion_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_TNO/fusion_10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_TNO/fusion_11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_TNO/fusion_12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_TNO/fusion_13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_TNO/fusion_14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_TNO/fusion_15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_TNO/fusion_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_TNO/fusion_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_TNO/fusion_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_TNO/fusion_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_TNO/fusion_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_TNO/fusion_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_TNO/fusion_8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/fusion_result_TNO/fusion_9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_result/pair/fused_image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/18.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/19.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/21.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/22.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/23.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/24.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/25.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/26.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/27.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/28.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/29.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/30.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/31.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/32.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/33.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/34.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/35.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/36.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/37.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/38.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/39.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/40.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/41.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/42.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/43.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/44.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/45.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/46.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/47.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/48.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/49.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/50.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/1/9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/18.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/19.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/21.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/22.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/23.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/24.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/25.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/26.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/27.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/28.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/29.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/30.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/31.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/32.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/33.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/34.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/35.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/36.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/37.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/38.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/39.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/40.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/41.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/42.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/43.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/44.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/45.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/46.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/47.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/48.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/49.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/50.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Road/2/9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/IR_images/IR1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/IR_images/IR10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/IR_images/IR11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/IR_images/IR12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/IR_images/IR13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/IR_images/IR14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/IR_images/IR15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/IR_images/IR16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/IR_images/IR17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/IR_images/IR18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/IR_images/IR19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/IR_images/IR2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/IR_images/IR20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/IR_images/IR21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/IR_images/IR3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/VIS_images/VIS1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/VIS_images/VIS10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/VIS_images/VIS11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/VIS_images/VIS12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/VIS_images/VIS13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/VIS_images/VIS14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/VIS_images/VIS15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/VIS_images/VIS16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/VIS_images/VIS17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/VIS_images/VIS18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/VIS_images/VIS19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/VIS_images/VIS2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/VIS_images/VIS20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/VIS_images/VIS21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/fusion_test_data/Tno/VIS_images/VIS3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/models/DenseFuse.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/run_fusion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/run_train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/runs/train_03-08_13-00/checkpoints/epoch003-loss0.001.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/utils/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/utils/util_dataset.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/utils/util_device.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/utils/util_fusion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/utils/util_loss.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/utils/util_train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DenseFuse/utils/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RFN_Nest/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="d8470b7e-8d01-4e59-93b5-7a665edeaac9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/.idea/DenseFuse.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/configs.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_result/pair/desired_image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_result/pair/fused_image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/2/1.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/2/2.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/2/3.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/2/4.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/2/5.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/2/6.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/2/7.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/3/1.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/3/2.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/3/3.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/3/4.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/3/5.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/3/6.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/3/7.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/4/1.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/4/2.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/4/3.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/4/4.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/4/5.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/4/6.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/4/7.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/5/1.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/5/2.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/5/3.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/5/4.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/5/5.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/5/6.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/5/7.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/6/1.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/6/2.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/6/3.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/6/4.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/6/5.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/6/6.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/6/7.JPG" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/models/DeepFuse.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/models/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/run_fusion.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/run_train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/runs/train_03-04_11-51/checkpoints/epoch755-loss0.078.pth" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/utils/__init__.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/utils/util_dataset.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/utils/util_device.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/utils/util_fusion.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/utils/util_loss.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/utils/util_train.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../DeepFuse/utils/utils.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/DenseFuse.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs.py" beforeDir="false" afterPath="$PROJECT_DIR$/configs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,69 +80,25 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectId" id="2ci2f595WWJyoRfj8rhnzE6tyqf" />
+  <component name="ProjectId" id="2jLzKg9JHQ52EJmH2z5VAi3dzjQ" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Git/Image-Fusion/IFCNN&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/Git/Image-Fusion/DenseFuse_2019",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
-  <component name="RunManager" selected="Python.run_fusion">
-    <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="DenseFuse" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/models" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/models/__init__.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="run_fusion" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="DenseFuse" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/run_fusion.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+}]]></component>
+  <component name="RunManager">
     <configuration name="run_train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="DenseFuse" />
+      <module name="DenseFuse_2019" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
@@ -315,75 +119,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="util_dataset" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="DenseFuse" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/util_dataset.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="util_fusion" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="DenseFuse" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/util_fusion.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.run_fusion" />
         <item itemvalue="Python.run_train" />
-        <item itemvalue="Python.util_fusion" />
-        <item itemvalue="Python.util_dataset" />
-        <item itemvalue="Python.__init__" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="bfeafc9a-37fe-4eb6-91ea-92a62240f9e7" name="Changes" comment="" />
-      <created>1708580179217</created>
+      <changelist id="d8470b7e-8d01-4e59-93b5-7a665edeaac9" name="Changes" comment="" />
+      <created>1721181082298</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1708580179217</updated>
-      <workItem from="1708580180451" duration="35000" />
-      <workItem from="1721025026328" duration="3298000" />
-      <workItem from="1721029369773" duration="886000" />
-      <workItem from="1721031568203" duration="1168000" />
-      <workItem from="1721035416935" duration="156000" />
-      <workItem from="1721036514304" duration="1080000" />
-      <workItem from="1721055746439" duration="93000" />
+      <updated>1721181082298</updated>
+      <workItem from="1721181083602" duration="1036000" />
+      <workItem from="1721294196009" duration="644000" />
+      <workItem from="1721613363491" duration="785000" />
+      <workItem from="1721614256965" duration="73000" />
+      <workItem from="1721614634260" duration="10000" />
+      <workItem from="1721618019188" duration="726000" />
+      <workItem from="1721626728744" duration="342000" />
+      <workItem from="1721628132715" duration="616000" />
     </task>
     <servers />
   </component>
@@ -402,13 +159,6 @@
     </option>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/DenseFuse$run.coverage" NAME="run Coverage Results" MODIFIED="1708580204258" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DenseFuse$run_fusion.coverage" NAME="run_fusion Coverage Results" MODIFIED="1721026732196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DenseFuse$DenseFuse.coverage" NAME="DenseFuse Coverage Results" MODIFIED="1721025503297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
-    <SUITE FILE_PATH="coverage/DenseFuse_2019$run_train.coverage" NAME="run_train Coverage Results" MODIFIED="1721030200714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DenseFuse_2019$run_fusion.coverage" NAME="run_fusion Coverage Results" MODIFIED="1721037318157" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/DenseFuse$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1721025539077" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
-    <SUITE FILE_PATH="coverage/DenseFuse$util_fusion.coverage" NAME="util_fusion Coverage Results" MODIFIED="1721026562402" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
-    <SUITE FILE_PATH="coverage/DenseFuse$util_dataset.coverage" NAME="util_dataset Coverage Results" MODIFIED="1721025955461" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/DenseFuse_2019$run_train.coverage" NAME="run_train Coverage Results" MODIFIED="1721626737636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

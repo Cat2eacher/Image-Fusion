@@ -115,4 +115,4 @@ if __name__ == "__main__":
         end_time = time.time()
         print('Finished Training')
         print('训练耗时：', (end_time - start_time))
-        print('Best val loss: {:4f}'.format(best_loss))
+        print('Best loss: {:4f}'.format(best_loss))

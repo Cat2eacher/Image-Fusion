@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/DenseFuse.iml" filepath="$PROJECT_DIR$/.idea/DenseFuse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/DenseFuse_2019.iml" filepath="$PROJECT_DIR$/.idea/DenseFuse_2019.iml" />
     </modules>
   </component>
 </project>

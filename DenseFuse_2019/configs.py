@@ -25,13 +25,13 @@ def set_args():
     # 数据集相关参数
     parser.add_argument('--image_path', default=r'E:/project/Image_Fusion/DATA/COCO/train2017', type=str, help='数据集路径')
     parser.add_argument('--gray', default=True, type=bool, help='是否使用灰度模式')
-    parser.add_argument('--train_num', default=70000, type=int, help='用于训练的图像数量')
+    parser.add_argument('--train_num', default=4, type=int, help='用于训练的图像数量')
     # 训练相关参数
     parser.add_argument('--device', type=str, default=device_on(), help='训练设备')
     parser.add_argument('--batch_size', type=int, default=2, help='input batch size, default=IR_images')
     parser.add_argument('--num_epochs', type=int, default=4, help='number of epochs to train for, default=4')
     parser.add_argument('--lr', type=float, default=1e-4, help='select the learning rate, default=1e-4')
-    parser.add_argument('--resume_path', default=None, type=str, help='导入已训练好的模型路径')
+    parser.add_argument('--resume_path', default='runs/train_07-15_16-28/checkpoints/epoch002-loss0.000.pth', type=str, help='导入已训练好的模型路径')
     parser.add_argument('--num_workers', type=int, default=0, help='载入数据集所调用的cpu线程数')
     # 打印输出
     parser.add_argument('--output', action='store_true', default=True, help="shows output")

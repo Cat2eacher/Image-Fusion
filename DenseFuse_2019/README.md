@@ -1,4 +1,5 @@
 # DenseFuse
+* Densefuse 用于红外可见光图像融合。
 
 * Densefuse 的 PyTorch 实现。fusion strategy 只用了最简单的addition。
 
