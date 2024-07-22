@@ -98,7 +98,7 @@ def tensorboard_load(writer, model, train_loss, test_image, device, epoch):
         fused_img_lum = model(under_patch_lum, over_patch_lum)
         # 对Cb和Cr通道进行加权融合
         fused_img_cr, fused_img_cb = weightedFusion(under_patch_Cr, over_patch_Cr, under_patch_Cb, over_patch_Cb)  # [B,1,H,W]
-        fused_img = torch.cat((fused_img_lum.cpu(), fused_img_cr, fused_img_cb), dim=1)
+        fused_img = torch.cat((fused_img_lum.cpu(), fused_img_cr.cpu(), fused_img_cb.cpu()), dim=1)
         # grid
         img_grid_under = torchvision.utils.make_grid(test_under_patch, normalize=True, nrow=2)
         img_grid_over = torchvision.utils.make_grid(test_over_patch, normalize=True, nrow=2)
