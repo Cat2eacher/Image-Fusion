@@ -1,6 +1,6 @@
 import torch
 from torch import nn
-from PIAFusion.models.common import reflect_conv
+from .common import reflect_conv
 
 
 def CMDAF(vi_feature, ir_feature):

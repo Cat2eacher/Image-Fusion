@@ -2,72 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8470b7e-8d01-4e59-93b5-7a665edeaac9" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/.idea/DenseFuse.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/configs.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_result/pair/desired_image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_result/pair/fused_image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/2/1.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/2/2.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/2/3.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/2/4.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/2/5.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/2/6.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/2/7.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/3/1.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/3/2.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/3/3.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/3/4.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/3/5.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/3/6.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/3/7.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/4/1.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/4/2.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/4/3.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/4/4.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/4/5.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/4/6.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/4/7.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/5/1.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/5/2.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/5/3.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/5/4.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/5/5.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/5/6.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/5/7.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/6/1.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/6/2.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/6/3.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/6/4.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/6/5.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/6/6.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/fusion_test_data/6/7.JPG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/models/DeepFuse.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/models/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/run_fusion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/run_train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/runs/train_03-04_11-51/checkpoints/epoch755-loss0.078.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/utils/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/utils/util_dataset.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/utils/util_device.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/utils/util_fusion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/utils/util_loss.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/utils/util_train.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../DeepFuse/utils/utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/DenseFuse.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs.py" beforeDir="false" afterPath="$PROJECT_DIR$/configs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PIAFusion/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../PIAFusion/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PIAFusion/configs.py" beforeDir="false" afterPath="$PROJECT_DIR$/../PIAFusion/configs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PIAFusion/models/cls_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/../PIAFusion/models/cls_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PIAFusion/models/fusion_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/../PIAFusion/models/fusion_model.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../PIAFusion/utils/util_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/../PIAFusion/utils/util_dataset.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,16 +26,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/Git/Image-Fusion/DenseFuse_2019",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/Git/Image-Fusion/DenseFuse_2019&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="run_train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DenseFuse_2019" />
@@ -141,6 +81,7 @@
       <workItem from="1721618019188" duration="726000" />
       <workItem from="1721626728744" duration="342000" />
       <workItem from="1721628132715" duration="616000" />
+      <workItem from="1722472607697" duration="479000" />
     </task>
     <servers />
   </component>

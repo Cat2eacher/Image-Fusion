@@ -8,7 +8,7 @@ import os
 from PIL import Image
 from torchvision import transforms
 from torch.utils.data import Dataset
-from PIAFusion.utils.util import RGB2YCrCb
+from .util import RGB2YCrCb
 
 # ----------------------------------------------------#
 #   transform

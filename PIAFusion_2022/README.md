@@ -1,5 +1,5 @@
 # PIAFusion
-
+* PIAFusion 用于可见光和红外的图像融合。
 * PIAFusion 的 PyTorch 实现。
 * 可见光和红外的图像融合。项目中是对可见光图像的Y通道和单通道红外图像进行融合，Y_f 再与原始可见光的Cr,Cb通道合并得到融合图像。
 
@@ -48,11 +48,10 @@
 ```
 
 ## 使用说明
-
 ### 1 数据准备
 #### 用于光照感知子网络的图片数据集（分类任务）
 * 将 data_illum.h5 文件转换为图片格式：
-  * 训练光照感知子网络的h5文件数据集在[data_illum.h5](https://pan.baidu.com/s/19Xbg3bWcMo600zZe7exnVg?pwd=PIAF)。
+  * 训练光照感知子网络的h5文件数据集在[data_illum.h5](https://pan.baidu.com/s/1f9RtT0yySOVdZALoGAhVtg?pwd=scp0)。
   * 下载之后，在项目中新建```dataset``` 文件夹，并将data_illum.h5文件移入其中。
   * 运行 **trans_illum_data.py** 文件，将h5文件还原为png格式的图片。
 
@@ -80,7 +79,7 @@ Image conversion and saving completed.
 
 #### 用于PIAFusion主网络的图片数据集（融合任务）
 * 将 data_MSRS.h5 文件转换为图片格式：
-  * 训练融合网络所需的数据集链接：[data_MSRS.h5](https://pan.baidu.com/s/1cO_wn2DOpiKLjHPaM1xZYQ?pwd=PIAF)。
+  * 训练融合网络所需的数据集链接：[data_MSRS.h5](https://pan.baidu.com/s/1SxGkXZ3QfZMmTvlsh0cPHQ?pwd=scp0)。
   * 下载之后，在项目中新建```dataset``` 文件夹，并将data_MSRS.h5文件移入其中。
   * 运行 **trans_msrs_data.py** 文件，将h5文件还原为png格式的图片。
 

@@ -1,7 +1,7 @@
 import math
 import torch
 from torch import nn
-from PIAFusion.models.common import reflect_conv
+from .common import reflect_conv
 
 
 class Illumination_classifier(nn.Module):
