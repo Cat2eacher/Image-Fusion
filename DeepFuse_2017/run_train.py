@@ -3,7 +3,7 @@
 @file name:run_train.py
 @desc:This script defines the training procedure of DeepFuse
 @Writer: Cat2eacher
-@Date: 2024/02/22
+@Date: 2024/12/05
 """
 import time
 import torch

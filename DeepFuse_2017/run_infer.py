@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@file name:run_fusion.py
+@file name:run_infer.py
 @desc: 模型推理
 @Writer: Cat2eacher
 @Date: 2024/02/22
@@ -27,9 +27,9 @@ if __name__ == '__main__':
     #   单对图像融合
     # ---------------------------------------------------#
     if True:
-        image1_path = "fusion_test_data/2/2.JPG"
-        image2_path = "fusion_test_data/2/6.JPG"
-        result_path = 'fusion_result'
+        image1_path = "data_test/2/2.JPG"
+        image2_path = "data_test/2/6.JPG"
+        result_path = 'data_result'
         if not os.path.exists(result_path):
             os.makedirs(result_path)
         Fusion_image, desired_image = fusion_instance.run(image1_path, image2_path)

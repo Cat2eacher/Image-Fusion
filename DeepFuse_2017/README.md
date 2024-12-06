@@ -1,21 +1,51 @@
 # DeepFuse
 
-* 用于多曝光图像融合。
-* DeepFuse 的 PyTorch 实现。fusion strategy 论文中只用了最简单的addition。
-* 论文地址：
-  - [readpaper.com](https://readpaper.com/home/) 在这个网站上找的论文
-* 参考项目：
-  - [DeepFuse.pytorch](https://github.com/SunnerLi/DeepFuse.pytorch) 主要学习了这里的代码。
+---
+
+### The re-implementation of ICCV 2017 DeepFuse paper idea
+
+![](figure\Schematic%20diagram.png)
+
+![](figure\framework.png)
+
+This code is based on [K. Ram Prabhakar, V Sai Srikar, R. Venkatesh Babu. DeepFuse: A Deep Unsupervised Approach for Exposure Fusion with Extreme Exposure Image Pairs. ICCV2017, pp. 4714-4722](http://openaccess.thecvf.com/content_iccv_2017/html/Prabhakar_DeepFuse_A_Deep_ICCV_2017_paper.html)
+
+---
+
+## Description 描述
+- **基础框架：** CNN
+- **任务场景：** 用于多曝光图像融合，multi-exposure fusion (MEF)。
+- **项目描述：** DeepFuse 的 PyTorch 实现。fusion strategy 论文中只用了最简单的addition。
+- **论文地址：**
+  - [readpaper.com](https://readpaper.com/home/) 
+  - [K. Ram Prabhakar, V Sai Srikar, R. Venkatesh Babu. DeepFuse: A Deep Unsupervised Approach for Exposure Fusion with Extreme Exposure Image Pairs. ICCV2017, pp. 4714-4722](http://openaccess.thecvf.com/content_iccv_2017/html/Prabhakar_DeepFuse_A_Deep_ICCV_2017_paper.html)
+- **参考项目：**
+  - [SunnerLi/DeepFuse.pytorch](https://github.com/SunnerLi/DeepFuse.pytorch) 主要学习了这里的代码。
   - [sndnshr/DeepFuse](https://github.com/sndnshr/DeepFuse)
-* 百度网盘：
-  - 链接：https://pan.baidu.com/s/12cvVquASeokZ7xkvM7sHeA?pwd=scp0 
+  - [thfylsty/DeepFuse](https://github.com/thfylsty/Classic-and-state-of-the-art-image-fusion-methods/tree/main/deepfuse)
+
+- **百度网盘：**
+  - 链接：[DeepFuse Link](https://pan.baidu.com/s/12cvVquASeokZ7xkvM7sHeA?pwd=scp0)
   - 提取码：scp0
 
-## 文件结构
+---
+
+## Idea 想法
+
+In this code, for all conv layers, the filter size is 3*3. And this code is not a complete version for DeepFuse, we just implement one channel fusion method which use CNN network.
+
+This code is not exactlly same with paper in ICCV2017. The aim of the training process is to reconstruct the input image by this network. The encoder(C1, C2) is used to extract image features and decoder(C3, C4, C5) is a reconstruct tool. The fusion strategy( Tensor addition) is only used in testing process.
+
+We train this network using [Microsoft COCO dataset](http://msvocds.blob.core.windows.net/coco2014/train2014.zip)(T.-Y. Lin, M. Maire, S. Belongie, J. Hays, P. Perona, D. Ramanan, P. Dollar, and C. L. Zitnick. Microsoft coco: Common objects in context. In ECCV, 2014. 3-5.) as input images which contains 80000 images and all resize to 256×256 and RGB images are transformed to gray ones.
+
+---
+
+## Structure 文件结构
+
 ```shell
-├─fusion_test_data              # 用于测试的不同图片
+├─data_test              # 用于测试的不同图片
 │ 
-├─fusion_result     # run_fusion.py 的运行结果。使用训练好的权重对fusion_test_data内图像融合结果 
+├─data_result     # run_infer.py 的运行结果。使用训练好的权重对fusion_test_data内图像融合结果 
 │  └─pair           # 单对图像融合结果
 |
 ├─models                        # 网络模型
@@ -26,25 +56,22 @@
 │     ├─checkpoints # 模型权重
 │     └─logs        # 用于存储训练过程中产生的Tensorboard文件
 |
-├─utils      	                # 调用的功能函数
+├─utils                          # 调用的功能函数
 │  ├─util_dataset.py            # 构建数据集
-│  ├─util_device.py        	# 运行设备 
+│  ├─util_device.py            # 运行设备 
 │  ├─util_fusion.py             # 模型推理
-│  ├─util_loss.py            	# 结构误差损失函数
-│  ├─util_train.py            	# 训练用相关函数
+│  ├─util_loss.py                # 结构误差损失函数
+│  ├─util_train.py                # 训练用相关函数
 │  └─utils.py                   # 其他功能函数
 │ 
-├─configs.py 	    # 模型训练超参数
+├─configs.py         # 模型训练超参数
 │ 
-├─run_fusion.py   # 该文件使用训练好的权重将test_data内的测试图像进行融合
+├─run_infer.py   # 该文件使用训练好的权重将test_data内的测试图像进行融合
 │ 
 └─run_train.py      # 该文件用于训练模型
-
 ```
-
-
-
-## 使用说明
+---
+## Usage 使用说明
 
 ### Trainng
 
@@ -53,16 +80,16 @@
 * 打开configs.py对训练参数进行设置：
 * 参数说明：
 
-| 参数名              | 说明                                                                              |
-|------------------|---------------------------------------------------------------------------------|
-| image_path       | 用于训练的数据集的路径                                                                     |
-| train_num        | 设置该参数来确定用于训练的图像的数量                        |
-| resume_path      | 默认为None，设置为已经训练好的**权重文件路径**时可对该权重进行继续训练，注意选择的权重要与**gray**参数相匹配                  |
-| device           | 模型训练设备 cpu or gpu                                                               |
-| batch_size       | 批量大小                                                                            |
-| num_workers      | 加载数据集时使用的CPU工作进程数量，为0表示仅使用主进程，（在Win10下建议设为0，否则可能报错。Win11下可以根据你的CPU线程数量进行设置来加速数据集加载） |
-| learning_rate    | 训练初始学习率                                                                            |
-| num_epochs       | 训练轮数                                                                               |
+| 参数名           | 说明                                                                                  |
+| ------------- | ----------------------------------------------------------------------------------- |
+| image_path    | 用于训练的数据集的路径                                                                         |
+| train_num     | 设置该参数来确定用于训练的图像的数量                                                                  |
+| resume_path   | 默认为None，设置为已经训练好的**权重文件路径**时可对该权重进行继续训练，注意选择的权重要与**gray**参数相匹配                      |
+| device        | 模型训练设备 cpu or gpu                                                                   |
+| batch_size    | 批量大小                                                                                |
+| num_workers   | 加载数据集时使用的CPU工作进程数量，为0表示仅使用主进程，（在Win10下建议设为0，否则可能报错。Win11下可以根据你的CPU线程数量进行设置来加速数据集加载） |
+| learning_rate | 训练初始学习率                                                                             |
+| num_epochs    | 训练轮数                                                                                |
 
 * 设置完成参数后，运行**run_train.py**即可开始训练：
 
@@ -133,11 +160,9 @@ Best loss: 0.212551
 * 修改**resume_path**的默认值为已经训练过的权重文件路径
 * 运行**run_train.py**即可运行
 
-
-
 ### Fuse Image
+
 * 打开**run_fusion.py**文件，调整**defaults**参数
   * 确定原图像路径和权重路径
   * 确定保存路径
 * 运行**run_fusion.py**
-
