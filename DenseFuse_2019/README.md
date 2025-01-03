@@ -103,7 +103,7 @@ We train our network using [MS-COCO 2014](http://images.cocodataset.org/zips/tra
     parser.add_argument('--train_num', default=70000, type=int, help='用于训练的图像数量')
     # 训练相关参数
     parser.add_argument('--device', type=str, default=device_on(), help='训练设备')
-    parser.add_argument('--batch_size', type=int, default=2, help='input batch size, default=IR_images')
+    parser.add_argument('--batch_size', type=int, default=2, help='input batch size, default=INF_images')
     parser.add_argument('--num_epochs', type=int, default=4, help='number of epochs to train for, default=4')
     parser.add_argument('--lr', type=float, default=1e-4, help='select the learning rate, default=1e-4')
     parser.add_argument('--resume_path', default=None, type=str, help='导入已训练好的模型路径')
@@ -162,22 +162,20 @@ Best loss: 0.000127
 
 ### Fuse Image
 
-* 打开**run_fusion.py**文件，调整**defaults**参数
+* 打开**run_infer.py**文件，调整**FusionConfig**参数
   * 确定融合模式（Gray or RGB）
   * 确定原图像路径和权重路径
   * 确定保存路径
-* 运行**run_fusion.py**
+* 运行**run_infer.py**
 * 你可以在运行窗口看到如下信息：
 
 ```shell
-runs/train_07-15_16-28/checkpoints/epoch002-loss0.000.pth model loaded.
-载入数据...
-开始融合...
-输出路径：data_result\Road_fusion/fusion_1.png
-输出路径：data_result\Road_fusion/fusion_2.png
-......
-输出路径：data_result\Tno_fusion/fusion_14.png
-输出路径：data_result\Tno_fusion/fusion_15.png
+runs/train_COCO/checkpoints/epoch003-loss0.000.pth model loaded.
+Processing: 100%|██████████| 50/50 [00:01<00:00, 26.58it/s]
+Processing completed:50/50 images successfully fused
+Processing: 100%|██████████| 15/15 [00:01<00:00, 14.50it/s]
+Processing completed:15/15 images successfully fused
+
 ```
 
 

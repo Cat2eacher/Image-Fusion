@@ -7,26 +7,22 @@
 """
 
 import os
-import re
+import glob
+from tqdm import tqdm
 from torchvision.utils import save_image
 from utils.util_device import device_on
-from utils.util_fusion import image_fusion
+from utils.util_fusion import ImageFusion
 
-defaults = {
-    "gray": True,
-    "model_name": 'DenseFuse',
-    "model_weights": "runs/train_07-15_16-28/checkpoints/epoch002-loss0.000.pth",
-    "device": device_on(),
-}
+# 允许的图像扩展名
+image_extensions = (".jpg", ".jpeg", ".png", ".gif", ".bmp")
 
 
 class FusionConfig:
     gray: bool = True
     model_name: str = 'DenseFuse'
-    model_weights: str = "runs/train_07-15_16-28/checkpoints/epoch002-loss0.000.pth",
-    device: str = device_on(),
-    fusion_strategy: str = "mean"  # 可选: "mean", "max", "weighted"
-    batch_size: int = 1
+    model_weights: str = "runs/train_COCO/checkpoints/epoch003-loss0.000.pth"
+    device: str = device_on()
+    fusion_strategy: str = "mean"  # 可选: "mean", "max", "l1norm"
 
 
 '''
@@ -35,41 +31,101 @@ class FusionConfig:
 /****************************************************/
 '''
 if __name__ == '__main__':
-    fusion_instance = image_fusion(defaults)
-    # ---------------------------------------------------#
-    #   单对图像融合
-    # ---------------------------------------------------#
-    # if True:
-    #     image1_path = "data_test/Tno/IR_images/IR3.png"
-    #     image2_path = "data_test/Tno/VIS_images/VIS3.png"
-    #     result_path = 'data_result/pair'
-    #     if not os.path.exists(result_path):
-    #         os.makedirs(result_path)
-    #     Fusion_image = fusion_instance.run(image1_path, image2_path)
-    #     save_image(Fusion_image, f'{result_path}/fused_image.png')
+    # 配置参数
+    config = FusionConfig()
+    fusion_model = ImageFusion(config)
 
-    # ---------------------------------------------------#
-    #   多对图像融合
-    # ---------------------------------------------------#
-    datasets = ["Road", "Tno"]
-    for i in range(len(datasets)):
-        dataset = datasets[i]
-        IR_path = os.path.join("data_test", dataset, "IR_images")
-        VIS_path = os.path.join("data_test", dataset, "VIS_images")
-        result_path = os.path.join("data_result", dataset + "_fusion")
-        if not os.path.exists(result_path):
-            os.makedirs(result_path)
-        print('载入数据...')
-        IR_image_list = os.listdir(IR_path)
-        VIS_image_list = os.listdir(VIS_path)
-        IR_image_list = sorted(IR_image_list, key=lambda i: int(re.search(r'(\d+)', i).group()))
-        VIS_image_list = sorted(VIS_image_list, key=lambda i: int(re.search(r'(\d+)', i).group()))
-        print('开始融合...')
-        num = 0
-        for IR_image_name, VIS_image_name in zip(IR_image_list, VIS_image_list):
-            num += 1
-            IR_image_path = os.path.join(IR_path, IR_image_name)
-            VIS_image_path = os.path.join(VIS_path, VIS_image_name)
-            Fusion_image = fusion_instance.run(IR_image_path, VIS_image_path)
-            save_image(Fusion_image, f'{result_path}/fusion_{num}.png')
-            print(f'输出路径：' + result_path + '/fusion_{}.png'.format(num))
+    task = "datasets"  # 可选: "single-pair", "multi-pairs", "datasets"
+
+
+    # --------------------------------------#
+    #   单对图像融合
+    # --------------------------------------#
+    def process_single_pair(inf_path, vis_path, output_path):
+        """处理单对图像"""
+        try:
+            fused_image = fusion_model.run(inf_path, vis_path)
+            save_image(fused_image, output_path)
+            return True
+        except Exception as e:
+            print(f"Error processing {inf_path} and {vis_path}: {str(e)}")
+            return False
+
+
+    if task == "single-pair":
+        image1_path = "data_test/Tno/INF_images/IR3.png"
+        image2_path = "data_test/Tno/VIS_images/VIS3.png"
+        result_path = 'data_result/pair/fused_image.png'
+        Fusion_image = process_single_pair(image1_path, image2_path, result_path)
+
+
+    # --------------------------------------#
+    #   处理整个目录的图像对
+    # --------------------------------------#
+    def process_directory(inf_dir, vis_dir, output_dir):
+        """处理整个目录的图像对"""
+        # 创建输出目录
+        os.makedirs(output_dir, exist_ok=True)
+        # 获取所有图像路径
+        inf_images = []
+        vis_images = []
+        # 遍历当前目录中的所有文件
+        for file in os.listdir(inf_dir):
+            if file.lower().endswith(image_extensions):  # 检查扩展名是否为图像格式
+                file_path = os.path.join(inf_dir, file)  # 获取完整路径
+                inf_images.append(file_path)
+        inf_images = sorted(inf_images)
+
+        for file in os.listdir(vis_dir):
+            if file.lower().endswith(image_extensions):  # 检查扩展名是否为图像格式
+                file_path = os.path.join(vis_dir, file)  # 获取完整路径
+                vis_images.append(file_path)
+        vis_images = sorted(vis_images)
+
+        if len(inf_images) != len(vis_images):
+            raise ValueError("Number of INF and VIS images doesn't match!")
+
+        # 处理所有图像对
+        successful = 0
+        total = len(inf_images)
+        pbar = tqdm(zip(inf_images, vis_images), total=total, desc="Processing")
+        for idx, (inf_path, vis_path) in enumerate(pbar):
+            output_path = os.path.join(output_dir, f"fused_{idx:04d}.png")
+            if process_single_pair(inf_path, vis_path, output_path):
+                successful += 1
+
+        print(f"Processing completed:{successful}/{total} images successfully fused")
+        return successful, total
+
+
+    if task == "multi-pairs":
+        inf_dir = "data_test/Tno/INF_images"
+        vis_dir = "data_test/Tno/VIS_images"
+        output_dir = 'data_result/Tno'
+        successful, total = process_directory(inf_dir, vis_dir, output_dir)
+
+    # --------------------------------------#
+    #   处理多个数据集
+    # --------------------------------------#
+    if task == "datasets":
+        datasets = [
+            {
+                "name": "Road",
+                "inf_dir": "data_test/Road/INF_images",
+                "vis_dir": "data_test/Road/VIS_images",
+                "output_dir": "data_result/Road"
+            },
+            {
+                "name": "Tno",
+                "inf_dir": "data_test/Tno/INF_images",
+                "vis_dir": "data_test/Tno/VIS_images",
+                "output_dir": "data_result/Tno"
+            }
+        ]
+        for dataset in datasets:
+            successful, total = process_directory(
+                dataset["inf_dir"],
+                dataset["vis_dir"],
+                dataset["output_dir"]
+            )
+            # print(f"Dataset {dataset['name']}: {successful}/{total} images processed")

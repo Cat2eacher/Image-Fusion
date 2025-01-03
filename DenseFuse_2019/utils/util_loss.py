@@ -42,7 +42,7 @@ def ssim(img1, img2, window_size=11, window=None, size_average=True, full=False,
     mu2_sq = mu2.pow(2)
     mu1_mu2 = mu1 * mu2
     # 计算图像方差及协方差（需减去各自的均值平方以消除均值的影响）
-    # D(X)=E(X^IR_images)-[E(X)]^IR_images
+    # D(X)=E(X^INF_images)-[E(X)]^INF_images
     sigma1_sq = F.conv2d(img1 * img1, window, padding=padd, groups=channel) - mu1_sq
     sigma2_sq = F.conv2d(img2 * img2, window, padding=padd, groups=channel) - mu2_sq
     # COV(X,Y)=E(XY)-E(X)E(Y)
