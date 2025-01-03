@@ -3,142 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d8470b7e-8d01-4e59-93b5-7a665edeaac9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs.py" beforeDir="false" afterPath="$PROJECT_DIR$/configs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_35.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_36.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_41.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_45.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_46.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_49.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Road_fusion/fusion_9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Tno_fusion/fusion_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Tno_fusion/fusion_10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Tno_fusion/fusion_11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Tno_fusion/fusion_12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Tno_fusion/fusion_13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Tno_fusion/fusion_14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Tno_fusion/fusion_15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Tno_fusion/fusion_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Tno_fusion/fusion_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Tno_fusion/fusion_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Tno_fusion/fusion_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Tno_fusion/fusion_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Tno_fusion/fusion_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Tno_fusion/fusion_8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/Tno_fusion/fusion_9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_result/pair/fused_image.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/10.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/11.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/12.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/13.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/14.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/15.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/16.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/17.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/18.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/19.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/20.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/21.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/21.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/22.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/23.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/23.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/24.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/24.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/25.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/25.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/26.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/26.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/27.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/27.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/28.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/28.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/29.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/29.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/30.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/30.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/31.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/31.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/33.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/33.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/34.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/34.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/35.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/35.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/36.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/36.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/37.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/37.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/38.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/38.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/39.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/39.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/40.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/40.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/41.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/41.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/42.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/42.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/43.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/43.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/44.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/44.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/45.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/45.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/46.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/46.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/47.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/47.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/49.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/49.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/50.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/50.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Road/IR_images/9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Road/INF_images/9.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Tno/IR_images/IR1.png" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Tno/INF_images/IR1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Tno/IR_images/IR10.png" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Tno/INF_images/IR10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Tno/IR_images/IR11.png" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Tno/INF_images/IR11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Tno/IR_images/IR12.png" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Tno/INF_images/IR12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Tno/IR_images/IR13.png" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Tno/INF_images/IR13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Tno/IR_images/IR14.png" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Tno/INF_images/IR14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Tno/IR_images/IR15.png" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Tno/INF_images/IR15.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Tno/IR_images/IR16.png" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Tno/INF_images/IR16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Tno/IR_images/IR17.png" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Tno/INF_images/IR17.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Tno/IR_images/IR18.png" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Tno/INF_images/IR18.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Tno/IR_images/IR19.png" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Tno/INF_images/IR19.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Tno/IR_images/IR2.png" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Tno/INF_images/IR2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Tno/IR_images/IR20.png" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Tno/INF_images/IR20.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Tno/IR_images/IR21.png" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Tno/INF_images/IR21.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data_test/Tno/IR_images/IR3.png" beforeDir="false" afterPath="$PROJECT_DIR$/data_test/Tno/INF_images/IR3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_infer.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_infer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/util_fusion.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/util_fusion.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/util_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/util_loss.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -164,16 +29,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Git_Project/Image-Fusion/DenseFuse_2019&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/Git_Project/Image-Fusion/README.md",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Python.run_infer">
     <configuration name="DenseFuse" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DenseFuse_2019" />
@@ -318,6 +183,7 @@
       <workItem from="1735890293362" duration="6057000" />
       <workItem from="1735901410890" duration="1106000" />
       <workItem from="1735902696483" duration="6463000" />
+      <workItem from="1735909287612" duration="672000" />
     </task>
     <servers />
   </component>
