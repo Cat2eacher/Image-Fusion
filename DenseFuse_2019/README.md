@@ -1,22 +1,43 @@
 # DenseFuse
-* Densefuse 用于红外可见光图像融合。
 
-* Densefuse 的 PyTorch 实现。fusion strategy 只用了最简单的addition。
+---
 
-* 论文地址：
+### The re-implementation of IEEE Transactions on Image Processing 2019 DeepFuse paper idea
+
+![](figure/framework.png)
+
+![](figure/train.png)
+
+This code is based on [H. Li, X. J. Wu, “DenseFuse: A Fusion Approach to Infrared and Visible Images,” IEEE Trans. Image Process., vol. 28, no. 5, pp. 2614–2623, May. 2019.](https://ieeexplore.ieee.org/document/8580578)
+
+---
+
+## Description 描述
+
+- **基础框架：** AutoEncoder
+- **任务场景：** 用于红外可见光图像融合，Infrared Visible Fusion (IVF)。
+- **项目描述：** Densefuse 的 PyTorch 实现。fusion strategy 只用了最简单的addition。
+- **论文地址：**
   - [arXiv](https://arxiv.org/abs/1804.08361)
-
-* 参考项目：
-  - [DenseFuse官方代码](https://github.com/hli1221/imagefusion_densefuse)
-  - [DenseFuse官方代码Pytorch版](https://github.com/hli1221/imagefusion_densefuse) 代码比较老
+  - [IEEEXplore](https://ieeexplore.ieee.org/document/8580578)
+- **参考项目：**
+  - [hli1221/imagefusion_densefuse](https://github.com/hli1221/imagefusion_densefuse) 官方代码基于tf
+  - [hli1221/densefuse-pytorch](https://github.com/hli1221/densefuse-pytorch) 官方代码基于torch
   - [DenseFuse-Refactoring-of-PyTorch](https://github.com/LGNWJQ/DenseFuse-Refactoring-of-PyTorch/tree/main) 主要学习了这里的代码
-  - [bsun0802 / DenseFuse-pytorch](https://github.com/bsun0802/DenseFuse-pytorch) 这一篇看的比较少。在model.py中把fusion layer也写了进去，后续想完整复现融合策略可以参考这个的思路
+  - [bsun0802/DenseFuse-pytorch](https://github.com/bsun0802/DenseFuse-pytorch) 这一篇看的比较少。在model.py中把fusion layer也写了进去，后续想完整复现融合策略可以参考这个的思路
 
-* 百度网盘：
-  - 链接：https://pan.baidu.com/s/1YlnmGa1jfCXt1YITPTV8ag?pwd=scp0 
-  - 提取码：scp0
+---
 
-## 文件结构
+## Idea 想法
+
+In contrast to conventional convolutional networks, our encoding network is combined by convolutional neural network layer and dense block which the output of each layer is connected to every other layer. We attempt to use this architecture to get more useful features from source images in encoder process. Then appropriate fusion strategy is utilized to fuse these features. Finally, the fused image is reconstructed by decoder.
+
+We train our network using [MS-COCO 2014](http://images.cocodataset.org/zips/train2014.zip)(T.-Y. Lin, M. Maire, S. Belongie, J. Hays, P. Perona, D. Ramanan, P. Dollar, and C. L. Zitnick. Microsoft coco: Common objects in context. In ECCV, 2014. 3-5.) as input images which contains 80000 images and all resize to 256×256 and RGB images are transformed to gray ones. Learning rate is 1×10^(-4). The batch size and epochs are 2 and 4, respectively.
+
+---
+
+## Structure 文件结构
+
 ```shell
 ├─fusion_test_data              # 用于测试的不同图片
 │  ├─Road          	  	# Gray  可见光+红外
@@ -51,9 +72,8 @@
 
 ```
 
-
-
-## 使用说明
+---
+## Usage 使用说明
 
 ### Trainng
 

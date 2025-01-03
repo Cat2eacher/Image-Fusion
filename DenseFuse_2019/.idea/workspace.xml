@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d8470b7e-8d01-4e59-93b5-7a665edeaac9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PIAFusion/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../PIAFusion/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PIAFusion/configs.py" beforeDir="false" afterPath="$PROJECT_DIR$/../PIAFusion/configs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PIAFusion/models/cls_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/../PIAFusion/models/cls_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PIAFusion/models/fusion_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/../PIAFusion/models/fusion_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../PIAFusion/utils/util_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/../PIAFusion/utils/util_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,16 +22,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Git/Image-Fusion/DenseFuse_2019&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "E:/Git_Project/Image-Fusion/DeepFuse_2017",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="run_train" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="DenseFuse_2019" />
@@ -82,6 +78,7 @@
       <workItem from="1721626728744" duration="342000" />
       <workItem from="1721628132715" duration="616000" />
       <workItem from="1722472607697" duration="479000" />
+      <workItem from="1735871086796" duration="1806000" />
     </task>
     <servers />
   </component>
