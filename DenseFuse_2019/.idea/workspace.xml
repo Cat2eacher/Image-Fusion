@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d8470b7e-8d01-4e59-93b5-7a665edeaac9" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/DenseFuse_2019.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DenseFuse_2019.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs.py" beforeDir="false" afterPath="$PROJECT_DIR$/configs.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_fusion.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_infer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/run_train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/util_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/util_dataset.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,7 +33,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/Git_Project/Image-Fusion/DeepFuse_2017",
+    "last_opened_file_path": "E:/Git_Project/Image-Fusion/DenseFuse_2019",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
@@ -79,6 +85,8 @@
       <workItem from="1721628132715" duration="616000" />
       <workItem from="1722472607697" duration="479000" />
       <workItem from="1735871086796" duration="1806000" />
+      <workItem from="1735874169549" duration="1565000" />
+      <workItem from="1735876023849" duration="683000" />
     </task>
     <servers />
   </component>

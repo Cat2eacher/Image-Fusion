@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@file name:run_fusion.py
+@file name:run_infer.py
 @desc: 模型推理
 @Writer: Cat2eacher
 @Date: 2024/02/22

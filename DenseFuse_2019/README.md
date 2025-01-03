@@ -43,7 +43,7 @@ We train our network using [MS-COCO 2014](http://images.cocodataset.org/zips/tra
 │  ├─Road          	  	# Gray  可见光+红外
 │  └─Tno           		# Gray  可见光+红外
 │ 
-├─fusion_result     # run_fusion.py 的运行结果。使用训练好的权重对fusion_test_data内图像融合结果 
+├─fusion_result     # run_infer.py 的运行结果。使用训练好的权重对fusion_test_data内图像融合结果 
 │  ├─pair           # 单对图像融合结果
 │  ├─Road_fusion
 │  └─TNO_fusion
@@ -66,7 +66,7 @@ We train our network using [MS-COCO 2014](http://images.cocodataset.org/zips/tra
 │ 
 ├─configs.py 	    # 模型训练超参数
 │ 
-├─run_fusion.py   # 该文件使用训练好的权重将test_data内的测试图像进行融合
+├─run_infer.py   # 该文件使用训练好的权重将test_data内的测试图像进行融合
 │ 
 └─run_train.py      # 该文件用于训练模型
 

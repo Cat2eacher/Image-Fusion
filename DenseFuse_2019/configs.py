@@ -3,7 +3,7 @@
 @file name:configs.py
 @desc: 模型参数
 @Writer: Cat2eacher
-@Date: 2024/02/22
+@Date: 2025/01/03
 """
 
 import argparse
@@ -49,6 +49,6 @@ def set_args():
         print(f'batch_size: {args.batch_size}')
         print(f'num_epochs: {args.num_epochs}')
         print(f'num_workers: {args.num_workers}')
-        print(f'learning rate : {args.lr}')
+        print(f'learning rate: {args.lr}')
         print(f'resume_path: {args.resume_path}')
     return args

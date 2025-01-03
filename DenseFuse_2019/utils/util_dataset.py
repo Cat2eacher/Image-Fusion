@@ -3,7 +3,7 @@
 @file name:util_dataset.py
 @desc: 数据集 dataset
 @Writer: Cat2eacher
-@Date: 2024/02/21
+@Date: 2025/01/03
 """
 
 import os
@@ -13,49 +13,96 @@ from torchvision import transforms
 from torchvision.io import read_image, ImageReadMode
 from torch.utils.data import Dataset
 
+"""
+    根据DenseFuse论文中提到的训练细节, 需要注意以下内容：
+    
+    数据集处理：
+    使用MS-COCO 2014数据集
+    包含80000张图像
+
+    图像预处理：
+    所有图像调整为256×256大小
+    RGB图像转换为灰度图
+
+    训练参数：
+    学习率(Learning Rate) = 1×10^(-4)
+    批次大小(Batch Size) = 2
+    训练轮数(Epochs) = 4
+"""
+
+
 # ----------------------------------------------------#
 #   dataset
 # ----------------------------------------------------#
 # AutoEncoder任务，不需要labels
 class COCO_dataset(Dataset):
     def __init__(self, images_path, transform=None, image_num=None):
+        """
+        Args:
+            images_path (str): COCO数据集路径
+            transform (optional): 图像转换操作
+            image_num (int): 使用的图像数量，默认None（按论文要求为80000）
+        """
         self.images_path = images_path  # 初始化图像文件夹
         self.transform = transform  # 初始化图像变换
         self.image_list = os.listdir(images_path)
+        # 确保图像数量
         if image_num is not None:
             self.image_list = self.image_list[:image_num]
+        print(f"Loaded {len(self.image_list)} images")
 
     def __len__(self):
         # 返回数据集中样本的数量
         return len(self.image_list)
 
     def __getitem__(self, index):
-        # 用于加载并返回数据集中给定索引idx的样本
-        image_path = os.path.join(self.images_path, self.image_list[index])
-        image = read_image(image_path, mode=ImageReadMode.RGB)
-        if self.transform is not None:
-            image = self.transform(image)
-        return image
+        try:
+            # 用于加载并返回数据集中给定索引idx的样本
+            image_path = os.path.join(self.images_path, self.image_list[index])
+            image = read_image(image_path, mode=ImageReadMode.RGB)
+
+            # 应用转换
+            if self.transform is not None:
+                image = self.transform(image)
+
+            return image
+
+        except Exception as e:
+            print(f"Error loading image {self.image_list[index]}: {e}")
+            # 如果当前图像加载失败，随机返回另一张图像
+            return self.__getitem__(np.random.randint(0, len(self)))
 
 
 # ----------------------------------------------------#
 #   transform
 # ----------------------------------------------------#
 def image_transform(resize=256, gray=False):
+    """
+    按照DenseFuse论文要求设置图像转换:
+    1. 调整大小为256x256
+    2. 转换为灰度图
+    """
     if gray:
         transforms_list = transforms.Compose([transforms.ToPILImage(),
-                                              transforms.Resize(400),
-                                              transforms.RandomCrop(resize),
-                                              transforms.Grayscale(num_output_channels=1),
+                                              # 方法一：随机裁剪方案
+                                              # transforms.Resize(400),
+                                              # transforms.RandomCrop(resize),
+                                              # 方法二：直接固定resize
+                                              transforms.Resize((resize, resize)),  # 固定大小为256x256
+                                              transforms.Grayscale(num_output_channels=1),  # 转换为灰度图
                                               transforms.ToTensor(),
                                               ])
     else:
         transforms_list = transforms.Compose([transforms.ToPILImage(),
-                                              transforms.Resize(400),
-                                              transforms.RandomCrop(resize),
+                                              # 方法一：随机裁剪方案
+                                              # transforms.Resize(400),
+                                              # transforms.RandomCrop(resize),
+                                              # 方法二：直接固定resize
+                                              transforms.Resize((resize, resize)),  # 固定大小为256x256
                                               transforms.ToTensor()
                                               ])
     return transforms_list
+
 
 '''
 /****************************************************/

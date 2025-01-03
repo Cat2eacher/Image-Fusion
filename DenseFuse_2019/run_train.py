@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
 @file name:run_train.py
-@desc: 模型训练
+@desc: This script defines the training procedure of DenseFuse
 @Writer: Cat2eacher
-@Date: 2024/02/22
+@Date: 2025/01/03
 """
 import time
 from torch.utils.data import DataLoader
