@@ -9,12 +9,12 @@ import time
 from torch.utils.data import DataLoader
 from utils.utils import create_run_directory, weights_init
 from utils.util_dataset import COCO_dataset, image_transform
-from utils.util_train import train_epoch, tensorboard_load, checkpoint_save
+from utils.util_train import train_epoch, tensorboard_log, checkpoint_save
 from utils.util_loss import *
 from models import fuse_model
 from configs import set_args
+# from tensorboardX import SummaryWriter
 from torch.utils.tensorboard import SummaryWriter
-
 '''
 /****************************************************/
     main
@@ -57,10 +57,11 @@ if __name__ == "__main__":
     print('然后使用该指令查看训练过程：tensorboard --logdir=./')
 
     # 导入测试图像
-    for i, image_batch in enumerate(train_loader):
-        test_image = image_batch
-        break
-    test_image = test_image.to(device)
+    # for i, image_batch in enumerate(train_loader):
+    #     test_image = image_batch
+    #     break
+    # test_image = test_image.to(device)
+    test_image = next(iter(train_loader)).to(args.device)
     print('测试数据载入完成...')
 
     if True:
@@ -82,7 +83,7 @@ if __name__ == "__main__":
         lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=1, gamma=0.9)
 
         # 是否预训练
-        if args.resume_path is not None:
+        if args.resume_path:
             print('Loading weights into state dict...')
             # 读取训练好的模型参数
             checkpoint = torch.load(args.resume_path, map_location=device)
@@ -103,7 +104,7 @@ if __name__ == "__main__":
             train_loss = train_epoch(model_train, device, train_loader, criterion, optimizer, epoch, num_epochs)
             # =====================valid============================
             # 无验证集，替换成在tensorboard中测试
-            tensorboard_load(writer, model_train, train_loss, test_image, epoch)
+            tensorboard_log(writer, model_train, train_loss, test_image, epoch)
             # =====================updateLR=========================
             lr_scheduler.step()
             # =====================checkpoint=======================
@@ -114,5 +115,5 @@ if __name__ == "__main__":
         writer.close()
         end_time = time.time()
         print('Finished Training')
-        print('训练耗时：', (end_time - start_time))
+        print(f'训练耗时：{end_time - start_time:.2f}秒')
         print('Best loss: {:4f}'.format(best_loss))

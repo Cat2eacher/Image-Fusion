@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
 @file name:run_infer.py
-@desc: 模型推理
+@desc: 模型推理过程/融合过程
 @Writer: Cat2eacher
-@Date: 2024/02/22
+@Date: 2025/01/03
 """
 
 import os
@@ -18,6 +18,17 @@ defaults = {
     "model_weights": "runs/train_07-15_16-28/checkpoints/epoch002-loss0.000.pth",
     "device": device_on(),
 }
+
+
+class FusionConfig:
+    gray: bool = True
+    model_name: str = 'DenseFuse'
+    model_weights: str = "runs/train_07-15_16-28/checkpoints/epoch002-loss0.000.pth",
+    device: str = device_on(),
+    fusion_strategy: str = "mean"  # 可选: "mean", "max", "weighted"
+    batch_size: int = 1
+
+
 '''
 /****************************************************/
     main
@@ -29,9 +40,9 @@ if __name__ == '__main__':
     #   单对图像融合
     # ---------------------------------------------------#
     # if True:
-    #     image1_path = "fusion_test_data/Tno/IR_images/IR3.png"
-    #     image2_path = "fusion_test_data/Tno/VIS_images/VIS3.png"
-    #     result_path = 'fusion_result/pair'
+    #     image1_path = "data_test/Tno/IR_images/IR3.png"
+    #     image2_path = "data_test/Tno/VIS_images/VIS3.png"
+    #     result_path = 'data_result/pair'
     #     if not os.path.exists(result_path):
     #         os.makedirs(result_path)
     #     Fusion_image = fusion_instance.run(image1_path, image2_path)
@@ -43,9 +54,9 @@ if __name__ == '__main__':
     datasets = ["Road", "Tno"]
     for i in range(len(datasets)):
         dataset = datasets[i]
-        IR_path = os.path.join("fusion_test_data", dataset , "IR_images")
-        VIS_path = os.path.join("fusion_test_data", dataset , "VIS_images")
-        result_path = os.path.join("fusion_result", dataset + "_fusion")
+        IR_path = os.path.join("data_test", dataset, "IR_images")
+        VIS_path = os.path.join("data_test", dataset, "VIS_images")
+        result_path = os.path.join("data_result", dataset + "_fusion")
         if not os.path.exists(result_path):
             os.makedirs(result_path)
         print('载入数据...')

@@ -39,11 +39,11 @@ We train our network using [MS-COCO 2014](http://images.cocodataset.org/zips/tra
 ## Structure 文件结构
 
 ```shell
-├─fusion_test_data              # 用于测试的不同图片
+├─data_test              # 用于测试的不同图片
 │  ├─Road          	  	# Gray  可见光+红外
 │  └─Tno           		# Gray  可见光+红外
 │ 
-├─fusion_result     # run_infer.py 的运行结果。使用训练好的权重对fusion_test_data内图像融合结果 
+├─data_result     # run_infer.py 的运行结果。使用训练好的权重对fusion_test_data内图像融合结果 
 │  ├─pair           # 单对图像融合结果
 │  ├─Road_fusion
 │  └─TNO_fusion
@@ -117,31 +117,32 @@ We train our network using [MS-COCO 2014](http://images.cocodataset.org/zips/tra
 ```
 ==================模型超参数==================
 ----------数据集相关参数----------
-image_path: /home/COCO2017/train2017/
+image_path: ../dataset/COCO_train2014
 gray_images: True
-train_num: 70000
+train_num: 80000
 ----------训练相关参数----------
 device: cuda
-batch_size: 2
-num_workers: 4
+batch_size: 16
 num_epochs: 4
-learning rate : 0.0001
+num_workers: 0
+learning rate: 0.0001
+resume_path: 
 ==================模型超参数==================
+Loaded 80000 images
 训练数据载入完成...
 设备就绪...
-Tensorboard 构建完成，进入路径：./runs/train_07-15_16-28/logs_Gray_epoch=4
+Tensorboard 构建完成，进入路径：./runs\train_01-03_17-02\logs_Gray_epoch=4
 然后使用该指令查看训练过程：tensorboard --logdir=./
 测试数据载入完成...
 initialize network with normal type
 网络模型及优化器构建完成...
-Epoch [1/4]: 100%|█| 35000/35000 [13:57<00:00, 41.78it/s, learning_rate=0.0001, pixel_loss=0.000146, ssim_lo
-Epoch [2/4]: 100%|█| 35000/35000 [14:04<00:00, 41.43it/s, learning_rate=9e-5, pixel_loss=0.000298, ssim_loss
-Epoch [3/4]: 100%|█| 35000/35000 [14:28<00:00, 40.29it/s, learning_rate=8.1e-5, pixel_loss=7.85e-5, ssim_los
-Epoch [4/4]: 100%|█| 35000/35000 [14:33<00:00, 40.06it/s, learning_rate=7.29e-5, pixel_loss=2.43e-5, ssim_lo
+Epoch [1/4]: 100%|██████████| 5000/5000 [17:06<00:00,  4.87it/s, pixel_loss=0.0001, ssim_loss=0.0002, lr=0.000100]
+Epoch [2/4]: 100%|██████████| 5000/5000 [12:23<00:00,  6.72it/s, pixel_loss=0.0002, ssim_loss=0.0000, lr=0.000090]
+Epoch [3/4]: 100%|██████████| 5000/5000 [12:23<00:00,  6.73it/s, pixel_loss=0.0001, ssim_loss=0.0000, lr=0.000081]
+Epoch [4/4]: 100%|██████████| 5000/5000 [09:15<00:00,  8.99it/s, pixel_loss=0.0000, ssim_loss=0.0000, lr=0.000073]
 Finished Training
-训练耗时： 3425.805274248123
-Best val loss: 0.000230
-
+训练耗时：3072.27秒
+Best loss: 0.000127
 ```
 
 * Tensorboard查看训练细节：
@@ -172,11 +173,11 @@ Best val loss: 0.000230
 runs/train_07-15_16-28/checkpoints/epoch002-loss0.000.pth model loaded.
 载入数据...
 开始融合...
-输出路径：fusion_result\Road_fusion/fusion_1.png
-输出路径：fusion_result\Road_fusion/fusion_2.png
+输出路径：data_result\Road_fusion/fusion_1.png
+输出路径：data_result\Road_fusion/fusion_2.png
 ......
-输出路径：fusion_result\Tno_fusion/fusion_14.png
-输出路径：fusion_result\Tno_fusion/fusion_15.png
+输出路径：data_result\Tno_fusion/fusion_14.png
+输出路径：data_result\Tno_fusion/fusion_15.png
 ```
 
 

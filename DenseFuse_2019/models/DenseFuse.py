@@ -122,12 +122,22 @@ def initialize_weights(model):
 /****************************************************/
 '''
 if __name__ == "__main__":
-    train_net = DenseFuse_train(input_nc=3, output_nc=3)
-    print("DenseFuse have {} paramerters in total".format(sum(x.numel() for x in train_net.parameters())))
+    AutoEncoder_train = DenseFuse_train(input_nc=3, output_nc=3)
+    print("DenseFuse have {} paramerters in total".format(sum(x.numel() for x in AutoEncoder_train.parameters())))
     # RGB: DenseFuse have 74771 paramerters in total
     # GRAY: DenseFuse have 74193 paramerters in total
     # -------------------------#
     #   模型信息
     # -------------------------#
-    summary(train_net, (3, 224, 224))
+    summary(AutoEncoder_train, (3, 224, 224))
+    # -------------------------#
+    #   测试输出
+    # -------------------------#
+    input_tensor = torch.randn(1, 3, 224, 224)
+    output = AutoEncoder_train(input_tensor)
+    print(f"输入shape: {input_tensor.shape}")
+    print(f"输出shape: {output.shape}")
+    # 获取中间特征
+    features = AutoEncoder_train.encoder(input_tensor)
+    print(f"编码器特征shape: {features.shape}")
 

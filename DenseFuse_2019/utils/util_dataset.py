@@ -110,12 +110,13 @@ def image_transform(resize=256, gray=False):
 /****************************************************/
 '''
 if __name__ == "__main__":
-    image_path = 'E:/project/Image_Fusion/DATA/COCO/train2017'
-    gray = False
+    image_path = '../../dataset/train2014'
 
-    transform = image_transform(gray=gray)
+    gray = True
+    transform = image_transform(resize=256, gray=gray)
+
     coco_dataset = COCO_dataset(images_path=image_path, transform=transform)
-    print(coco_dataset.__len__())  # 118287
+    print(coco_dataset.__len__())  # 82783
 
     image = coco_dataset.__getitem__(20)
     print(f"图像数据类型:{type(image)}")  # <class 'torch.Tensor'>
