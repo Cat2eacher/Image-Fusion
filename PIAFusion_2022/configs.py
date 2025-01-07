@@ -24,7 +24,7 @@ def set_args():
     # parser.add_argument('--name', default="Cat2eacher", help="Coder Name")
     # 数据集相关参数
     parser.add_argument('--model_mode',
-                        default='cls_model', choices=['cls_model', 'fusion_model'], type=str, help='判断训练阶段')
+                        default='fusion_model', choices=['cls_model', 'fusion_model'], type=str, help='判断训练阶段')
     parser.add_argument('--image_path_cls',
                         default=r'data_train/cls_dataset', type=str, help='光照感知子网络数据集路径')
     parser.add_argument('--image_path_fuse',

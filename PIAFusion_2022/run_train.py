@@ -5,13 +5,16 @@
 @Writer: Cat2eacher
 @Date: 2025/01/07
 """
+
+import torch
 import time
 import random
 import numpy as np
-import torch
-
 from torch.utils.data import random_split, DataLoader
 from torchvision import datasets, transforms
+# from torch.utils.tensorboard import SummaryWriter
+from tensorboardX import SummaryWriter
+
 from utils.util import create_run_directory
 from utils.util_train import (train_epoch_cls, valid_epoch_cls, checkpoint_save_cls,
                               train_epoch_fusion, tensorboard_load, checkpoint_save_fusion)
@@ -19,19 +22,30 @@ from utils.util_dataset import MSRS_Dataset
 from utils.util_loss import illum_loss, aux_loss, texture_loss
 from models import choose_model
 from configs import set_args
-from torch.utils.tensorboard import SummaryWriter
 
 
 def init_seeds(seed=0):
     # Initialize random number generator (RNG) seeds https://pytorch.org/docs/stable/notes/randomness.html
     # cudnn seed 0 settings are slower and more reproducible, else faster and less reproducible
     import torch.backends.cudnn as cudnn
+    # Python RNG
     random.seed(seed)
+    # NumPy RNG
     np.random.seed(seed)
+    # PyTorch RNG
     torch.manual_seed(seed)
     if args.device == "cuda":
+        # CUDA RNG
         torch.cuda.manual_seed(seed)
-    cudnn.benchmark, cudnn.deterministic = (False, True) if seed == 0 else (True, False)
+        torch.cuda.manual_seed_all(seed)
+        # cuDNN:
+        if seed == 0:
+            torch.backends.cudnn.benchmark = False
+            torch.backends.cudnn.deterministic = True
+        else:
+            torch.backends.cudnn.benchmark = True
+            torch.backends.cudnn.deterministic = False
+
 
 
 '''
@@ -73,14 +87,14 @@ if __name__ == "__main__":
         # ------------------------------------#
         #   数据集
         # ------------------------------------#
-        train_dataset = datasets.ImageFolder(root=args.image_path_cls,
-                                             transform=transforms.Compose([transforms.ToTensor(),
-                                                                           ]))
+        cls_dataset = datasets.ImageFolder(root=args.image_path_cls,
+                                           transform=transforms.Compose([transforms.ToTensor(),
+                                                                         ]))
         # 划分验证集以测试模型性能， 训练与验证比例=9：1
-        image_nums = len(train_dataset)
+        image_nums = len(cls_dataset)
         train_nums = int(image_nums * 0.9)
         valid_nums = image_nums - train_nums
-        train_dataset, valid_dataset = random_split(dataset=train_dataset,
+        train_dataset, valid_dataset = random_split(dataset=cls_dataset,
                                                     lengths=[train_nums, valid_nums])
 
         train_loader = DataLoader(
@@ -91,7 +105,7 @@ if __name__ == "__main__":
             dataset=valid_dataset, batch_size=args.batch_size, shuffle=False,
             num_workers=args.num_workers, pin_memory=True)
 
-        print('光照感知子网络训练阶段 数据载入完成...')
+        print('[光照感知子网络] 训练阶段数据载入完成...')
 
         # ------------------------------------#
         #   Illumination_classifier 网络模型
@@ -111,13 +125,14 @@ if __name__ == "__main__":
         # 学习率和优化策略
         learning_rate = args.lr
         optimizer = torch.optim.Adam(cls_model.parameters(), learning_rate, weight_decay=5e-4)
+        # lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=1, gamma=0.9)
 
         # 是否预训练
         if args.resume_cls is not None:
             print('Resuming, initializing using weight from {}.'.format(args.resume_cls))
             print('Loading weights into state dict...')
             # 读取训练好的模型参数
-            checkpoint = torch.load(args.resume_cls, map_location=device)
+            checkpoint = torch.load(args.resume_cls, map_location=device, weights_only=True)
             cls_model.load_state_dict(checkpoint['model'])
             # optimizer.load_state_dict(checkpoint['optimizer'])
             if 'epoch' in checkpoint:
@@ -133,6 +148,7 @@ if __name__ == "__main__":
         start_time = time.time()
         for epoch in range(init_epoch, num_epochs):
             # =====================updateLR============================
+            # lr_scheduler.step()
             # 自定义学习率衰减计划， 按照PIAFusion的代码，前一半epoch保持恒定学习率，后一半epoch学习率按照如下方式衰减
             if epoch < num_epochs // 2:
                 lr = args.lr
@@ -152,7 +168,7 @@ if __name__ == "__main__":
 
         end_time = time.time()
         print('Finished Training')
-        print('训练耗时：', (end_time - start_time))
+        print(f'训练耗时：{end_time - start_time:.2f}秒')
         print('Best prec: {:4f}'.format(best_prec))
         writer.close()
 
@@ -175,6 +191,9 @@ if __name__ == "__main__":
             test_image = image_batch
             break
         print('测试数据载入完成...')
+        # test_image = next(iter(train_loader)).to(args.device)
+        print('测试数据载入完成...')
+
         # ------------------------------------#
         #   PIAFusion 网络模型
         # ------------------------------------#
@@ -200,7 +219,7 @@ if __name__ == "__main__":
             print('Resuming, initializing using weight from {}.'.format(args.resume_fuse))
             print('Loading weights into state dict...')
             # 读取训练好的模型参数
-            checkpoint = torch.load(args.resume_fuse, map_location=device)
+            checkpoint = torch.load(args.resume_fuse, map_location=device, weights_only=True)
             fusion_model.load_state_dict(checkpoint['model'])
             if 'epoch' in checkpoint:
                 init_epoch = checkpoint['epoch']
@@ -219,6 +238,7 @@ if __name__ == "__main__":
         # 学习率和优化策略
         learning_rate = args.lr
         optimizer = torch.optim.Adam(fusion_model.parameters(), learning_rate)
+        lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=1, gamma=0.9)
 
         # 损失函数loss_fn
         criterion = {
@@ -232,7 +252,7 @@ if __name__ == "__main__":
         for epoch in range(init_epoch, num_epochs):
             # =====================updateLR============================
             # 自定义学习率衰减计划， 按照PIAFusion的代码，前一半epoch保持恒定学习率，后一半epoch学习率按照如下方式衰减
-            if epoch <num_epochs // 2:
+            if epoch < num_epochs // 2:
                 lr = args.lr
             else:
                 lr = args.lr * (num_epochs - epoch) / (num_epochs - num_epochs // 2)
@@ -251,6 +271,6 @@ if __name__ == "__main__":
                 checkpoint_save_fusion(epoch, fusion_model, checkpoints_path, best_loss)
         end_time = time.time()
         print('Finished Training')
-        print('训练耗时：', (end_time - start_time))
+        print(f'训练耗时：{end_time - start_time:.2f}秒')
         print('Best val loss: {:4f}'.format(best_loss))
         writer.close()

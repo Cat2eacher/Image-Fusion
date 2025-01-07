@@ -56,7 +56,7 @@ class MSRS_Dataset(Dataset):
 /****************************************************/
 '''
 if __name__ == "__main__":
-    file_path = 'E:/project/Image_Fusion/PIAFusion/data_train/msrs_train'
+    file_path = 'E:/Git_Project/Image-Fusion/PIAFusion_2022/data_train/msrs_train'
     dataset = MSRS_Dataset(root=file_path,
                            file_num=10)
     print(dataset.__len__())  # 10
