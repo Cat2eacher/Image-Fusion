@@ -26,9 +26,9 @@ def set_args():
     parser.add_argument('--model_mode',
                         default='cls_model', choices=['cls_model', 'fusion_model'], type=str, help='判断训练阶段')
     parser.add_argument('--image_path_cls',
-                        default=r'dataset/cls_dataset', type=str, help='光照感知子网络数据集路径')
+                        default=r'data_train/cls_dataset', type=str, help='光照感知子网络数据集路径')
     parser.add_argument('--image_path_fuse',
-                        default=r'dataset/msrs_train', type=str, help='PIAFusion数据集路径')
+                        default=r'data_train/msrs_train', type=str, help='PIAFusion数据集路径')
     parser.add_argument('--train_num',
                         default=1000, type=int, help='用于训练的图像数量')
     # 训练相关参数

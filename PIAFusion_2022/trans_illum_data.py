@@ -17,10 +17,10 @@ from tqdm import tqdm
 
 def parse_arguments():
     """解析命令行参数"""
-    parser = argparse.ArgumentParser(description='Convert PIAFusion .h5 dataset to image folders.')
-    parser.add_argument('--h5_path', type=str, default='dataset/data_illum.h5',
+    parser = argparse.ArgumentParser(description='Convert PIAFusion .h5 data_train to image folders.')
+    parser.add_argument('--h5_path', type=str, default='data_train/data_illum.h5',
                         help='Path to the input .h5 file from PIAFusion.')
-    parser.add_argument('--cls_root_path', type=str, default='dataset/cls_dataset',
+    parser.add_argument('--cls_root_path', type=str, default='data_train/cls_dataset',
                         help='Output directory to save the converted image folders.')  # 转换后的图片存储位置
     return parser.parse_args()
 

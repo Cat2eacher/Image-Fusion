@@ -13,9 +13,9 @@ from PIAFusion.models import choose_model
 
 def set_args():
     parser = argparse.ArgumentParser(description='PyTorch PIAFusion')
-    parser.add_argument('--dataset_path', metavar='DIR', default='fusion_test_data/TNO',
-                        help='path to dataset (default: imagenet)')  # 测试数据存放位置
-    parser.add_argument('--save_path', default='fusion_result/fusion_official')  # 融合结果存放位置
+    parser.add_argument('--dataset_path', metavar='DIR', default='data_test/TNO',
+                        help='path to data_train (default: imagenet)')  # 测试数据存放位置
+    parser.add_argument('--save_path', default='data_result/fusion_official')  # 融合结果存放位置
     parser.add_argument('--model_weights', default='checkpoints_official/fusion_model_epoch_29.pth',
                         help='use pre-trained model')
     parser.add_argument('--device', default=device_on(), type=str,

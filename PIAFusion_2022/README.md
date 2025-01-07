@@ -1,22 +1,50 @@
 # PIAFusion
-* PIAFusion 用于可见光和红外的图像融合。
-* PIAFusion 的 PyTorch 实现。
-* 可见光和红外的图像融合。项目中是对可见光图像的Y通道和单通道红外图像进行融合，Y_f 再与原始可见光的Cr,Cb通道合并得到融合图像。
 
-* 论文地址：
+---
+
+### The re-implementation of Information Fusion 2022 PIAFusion paper idea
+
+![](figure/framework.png)
+
+This code is based on [Linfeng Tang, “PIAFusion: A progressive infrared and visible image fusion network based on illumination aware”, Information Fusion,Volum 83–84,2022,Pages 79-92](https://doi.org/10.1016/j.inffus.2022.03.007)
+
+---
+
+## Description 描述
+
+- **基础框架：** CNN
+- **任务场景：** 用于红外可见光图像融合，Infrared Visible Fusion (IVF)。
+- **项目描述：** PIAFusion 的 PyTorch 实现。可见光和红外的图像融合。项目中是对可见光图像的Y通道和单通道红外图像进行融合，Y_f 再与原始可见光的Cr,Cb通道合并得到融合图像。
+- **论文地址：**
+  - [PIAFusion](https://doi.org/10.1016/j.inffus.2022.03.007)
   - [PIAFusion](https://www.sciencedirect.com/science/article/abs/pii/S156625352200032X)
-
-* 参考项目：
+- **参考项目：**
   - [Linfeng-Tang/PIAFusion](https://github.com/Linfeng-Tang/PIAFusion) 官方代码。
   - [linklist2/PIAFusion_pytorch](https://github.com/linklist2/PIAFusion_pytorch) 官方认证过的Pytorch代码，也是主要参考。
 
+---
 
-## 文件结构
+## Idea 想法
+
+创新点在 损失函数 、跨模态融合模块 和 数据集 。
+
+1、基于光照感知来确定损失函数权重. 设计了一个照明感知子网络用来估计光照并计算照光照概率,利用光照概率构建光照感知损失来指导融合网络训练。
+光照感知网络本质上是一个分类器，它计算图像属于白天和夜间的概率。
+
+2、提出了一种跨模态差分感知融合（CMDAF）模块来补偿差分信息。
+
+
+3、发布了多光谱道路场景的数据集MSRS。
+
+---
+
+## Structure 文件结构
+
 ```shell
 ├─ checkpoints_official               # 官方训练好的权重文件
-├─ dataset                            # 用于分类任务和融合任务的训练数据集
-├─ fusion_result                      # run_fusion.py 的运行结果。使用训练好的权重对fusion_test_data内图像融合结果 
-├─ fusion_test_data                   # 用于测试的不同图片
+├─ data_train                            # 用于分类任务和融合任务的训练数据集
+├─ data_result                      # run_infer.py 的运行结果。使用训练好的权重对fusion_test_data内图像融合结果 
+├─ data_test                   # 用于测试的不同图片
 │  ├─ MSRS
 │  ├─ RoadScene
 │  └─ TNO
@@ -41,23 +69,25 @@
 │  └─util_train.py                    # 模型训练
 │ 
 ├─ configs.py                         # 训练参数配置
-├─ run_fusion.py                      # 该文件使用训练好的权重将test_data内的测试图像进行融合
+├─ run_infer.py                      # 该文件使用训练好的权重将test_data内的测试图像进行融合
 ├─ run_train.py                       # 模型训练
 ├─ trans_illum_data.py                # 将data_illum.h5文件数据集转换为文件夹存放图片的形式
 └─ trans_msrs_data.py                 # 将data_MSRS.h5文件数据集转换为文件夹存放图片的形式
 ```
 
-## 使用说明
-### 1 数据准备
+---
+## Usage 使用说明
+
+### 1 数据准备(github官方代码提供下载链接)
 #### 用于光照感知子网络的图片数据集（分类任务）
 * 将 data_illum.h5 文件转换为图片格式：
-  * 训练光照感知子网络的h5文件数据集在[data_illum.h5](https://pan.baidu.com/s/1f9RtT0yySOVdZALoGAhVtg?pwd=scp0)。
-  * 下载之后，在项目中新建```dataset``` 文件夹，并将data_illum.h5文件移入其中。
+  * 训练光照感知子网络的h5文件数据集在[data_illum.h5](https://pan.baidu.com/share/init?surl=D7XVGFyPgn9lH6JxYXt65Q&pwd=PIAF)。
+  * 下载之后，将data_illum.h5文件移入项目中```data_train``` 文件夹。
   * 运行 **trans_illum_data.py** 文件，将h5文件还原为png格式的图片。
 
-为了更好地观看训练的图片以及方便书写和调试代码， 本项目选择将h5文件还原为png格式的图片，使用下列命令转换：
+为了更直观观看训练的图片以及方便书写和调试代码， 本项目选择将h5文件还原为png格式的图片，使用下列命令转换：
 ```shell
-python trans_illum_data.py --h5_path 'dataset/data_illum.h5' --cls_root_path 'dataset/cls_dataset'
+python trans_illum_data.py --h5_path 'data_train/data_illum.h5' --cls_root_path 'data_train/cls_dataset'
 ```
 运行结果：
 ```shell
@@ -66,7 +96,7 @@ Image conversion and saving completed.
 ```
 转换后的目录如下所示:
 ```shell
- cls_dataset\
+ cls_dataset
  ├── day
  │   ├── day_0.png
  │   ├── day_1.png
@@ -79,14 +109,14 @@ Image conversion and saving completed.
 
 #### 用于PIAFusion主网络的图片数据集（融合任务）
 * 将 data_MSRS.h5 文件转换为图片格式：
-  * 训练融合网络所需的数据集链接：[data_MSRS.h5](https://pan.baidu.com/s/1SxGkXZ3QfZMmTvlsh0cPHQ?pwd=scp0)。
-  * 下载之后，在项目中新建```dataset``` 文件夹，并将data_MSRS.h5文件移入其中。
+  * 训练融合网络所需的数据集链接：[data_MSRS.h5](https://pan.baidu.com/share/init?surl=D7XVGFyPgn9lH6JxYXt65Q&pwd=PIAF)。
+  * 下载之后，将data_MSRS.h5文件移入项目中```data_train``` 文件夹。
   * 运行 **trans_msrs_data.py** 文件，将h5文件还原为png格式的图片。
 
 
 使用下列命令转换为图片格式:
 ```shell
-python trans_msrs_data.py --h5_path 'dataset/data_MSRS.h5' --msrs_root_path 'dataset/msrs_train'
+python trans_msrs_data.py --h5_path 'data_train/data_MSRS.h5' --msrs_root_path 'data_train/msrs_train'
 ```
 
 运行结果：
@@ -96,7 +126,7 @@ Image conversion and saving completed.
 ```
 转换后的目录如下所示:
 ```shell
- msrs_train/
+ msrs_train
  ├── Inf
  │   ├── 0.png
  │   ├── 1.png
@@ -135,8 +165,8 @@ Image conversion and saving completed.
 ==================模型超参数==================
 ----------数据集相关参数----------
 model_mode: cls_model
-image_path_cls: dataset/cls_dataset
-image_path_fuse: dataset/msrs_train
+image_path_cls: data_train/cls_dataset
+image_path_fuse: data_train/msrs_train
 train_num: 10000
 ----------训练相关参数----------
 random_seed: 42
@@ -204,8 +234,8 @@ Best prec: 0.968254
 ==================模型超参数==================
 ----------数据集相关参数----------
 model_mode: fusion_model
-image_path_cls: dataset/cls_dataset
-image_path_fuse: dataset/msrs_train
+image_path_cls: data_train/cls_dataset
+image_path_fuse: data_train/msrs_train
 train_num: 1000
 ----------训练相关参数----------
 random_seed: 42
