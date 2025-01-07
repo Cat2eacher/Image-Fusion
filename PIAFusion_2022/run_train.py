@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
 @file name:run_train.py
-@desc: 训练照明感知网络和PIAFusion
+@desc: This script defines the training procedure of 训练照明感知网络 和 PIAFusion
 @Writer: Cat2eacher
-@Date: 2024/05/15
+@Date: 2025/01/07
 """
 import time
 import random
@@ -58,9 +58,9 @@ if __name__ == "__main__":
     #
     # ----------------------------------------------------#
     #           训练过程
-    #   训练分为两个阶段，分别是autoencoder阶段和RFN阶段。
-    #   Init_Epoch为起始代
-    #   Epoch为总训练世代
+    #   训练分两个阶段，分别是：
+    #   光照感知子网络的训练，是分类任务；
+    #   PIAFusion的训练，是融合任务。
     # ----------------------------------------------------#
     writer = SummaryWriter(logs_path)
     print('Tensorboard 构建完成，进入路径：' + logs_path)

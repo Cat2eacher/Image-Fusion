@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 @file name:configs.py
-@desc: 模型参数
+@desc: This script defines the procedure to parse the parameters
 @Writer: Cat2eacher
 @Date: 2024/05/15
 """
@@ -40,7 +40,8 @@ def set_args():
     parser.add_argument('--batch_size', type=int, default=4, help='input batch size, default=4')
     parser.add_argument('--num_workers', type=int, default=0, help='载入数据集所调用的cpu线程数')
     parser.add_argument('--num_epochs', type=int, default=10, help='number of epochs to train for, default=10')
-    parser.add_argument('--lr', '--learning-rate', type=float, default=1e-3, help='select the learning rate, default=1e-2')
+    parser.add_argument('--lr', '--learning-rate', type=float, default=1e-2, help='select the learning rate,'
+                                                                                  'default=1e-2')
     # 打印输出
     parser.add_argument('--output', action='store_true', default=True, help="shows output")
     # 使用parse_args()解析参数

@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d8470b7e-8d01-4e59-93b5-7a665edeaac9" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +33,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/Git_Project/Image-Fusion/README.md",
+    "last_opened_file_path": "E:/Git_Project/Image-Fusion/DeepFuse_2017",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
@@ -184,6 +183,7 @@
       <workItem from="1735901410890" duration="1106000" />
       <workItem from="1735902696483" duration="6463000" />
       <workItem from="1735909287612" duration="672000" />
+      <workItem from="1736219015801" duration="38000" />
     </task>
     <servers />
   </component>
