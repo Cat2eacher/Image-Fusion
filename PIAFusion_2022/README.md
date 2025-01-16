@@ -271,8 +271,8 @@ Finished Training
 Best val loss: 3.558482
 ```
 
-### 3 Fusion
-* 设置完成参数后，运行**run_fusion.py**即可开始推理：
+### 3 Infer 推理
+* 设置完成参数后，运行**run_infer.py**即可开始推理。
 
 ### 4 画中画效果
  - 论文中图片对比时画中画效果：
