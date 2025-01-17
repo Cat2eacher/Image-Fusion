@@ -43,7 +43,7 @@ if __name__ == "__main__":
     #           网络模型
     # ----------------------------------------------------#
     deepsupervision = True
-    model_name = "NestFuse"  # 模型初始化
+    model_name = "NestFuse_2020"  # 模型初始化
     in_channel = 1 if args.gray else 3
     out_channel = 1 if args.gray else 3
     model_train = fuse_model(model_name, in_channel, out_channel, deepsupervision)

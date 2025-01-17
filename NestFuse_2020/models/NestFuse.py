@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-@file name:NestFuse.py
+@file name:NestFuse_2020.py
 @desc: NestFuse网络模型
 @Writer: Cat2eacher
 @Date: 2024/02/21

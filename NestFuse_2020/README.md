@@ -18,7 +18,7 @@
 │ 
 ├─models       
 │  ├─fusion_strategy            # 融合策略              
-│  └─NestFuse                   # 网络模型
+│  └─NestFuse_2020                   # 网络模型
 │ 
 ├─runs              # run_train.py 的运行结果
 │  └─train_02-22_07-29
