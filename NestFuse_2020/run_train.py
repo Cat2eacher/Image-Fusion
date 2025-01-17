@@ -1,18 +1,19 @@
 # -*- coding: utf-8 -*-
 """
-Writer: CAT
-Date: 2024/02/22
+@file name:run_train.py
+@desc: This script defines the training procedure of NestFuse
+@Writer: Cat2eacher
+@Date: 2025/01/17
 """
-import os
 import time
-import datetime
 from torch.utils.data import DataLoader
 from utils.utils import create_run_directory, weights_init
 from utils.util_dataset import COCO_dataset, image_transform
-from utils.util_train import train_epoch, tensorboard_load, checkpoint
+from utils.util_train import train_epoch, tensorboard_log, checkpoint_save
 from utils.util_loss import *
 from models import fuse_model
 from configs import set_args
+# from tensorboardX import SummaryWriter
 from torch.utils.tensorboard import SummaryWriter
 
 '''
@@ -22,8 +23,8 @@ from torch.utils.tensorboard import SummaryWriter
 '''
 if __name__ == "__main__":
     print("==================模型超参数==================")
-    run_dir, checkpoint_dir = create_run_directory()
     args = set_args()
+    run_dir, checkpoints_dir, logs_dir = create_run_directory(args)
     print("==================模型超参数==================")
     # ----------------------------------------------------#
     #           数据集
@@ -43,7 +44,7 @@ if __name__ == "__main__":
     #           网络模型
     # ----------------------------------------------------#
     deepsupervision = True
-    model_name = "NestFuse_2020"  # 模型初始化
+    model_name = "NestFuse"  # 模型初始化
     in_channel = 1 if args.gray else 3
     out_channel = 1 if args.gray else 3
     model_train = fuse_model(model_name, in_channel, out_channel, deepsupervision)
@@ -53,21 +54,16 @@ if __name__ == "__main__":
     #           训练过程
     # ----------------------------------------------------#
     # 训练过程记录
-    train_time = datetime.datetime.now().strftime("%m%d%H%M")
-    if args.gray:
-        logs_name = "logs" + '_Gray_' + 'epoch={}'.format(args.num_epochs)
-    else:
-        logs_name = "logs" + '_RGB_' + 'epoch={}'.format(args.num_epochs)
-    logs_path = os.path.join(run_dir, logs_name)
-    writer = SummaryWriter(logs_path)
-    print('Tensorboard 构建完成，进入路径：' + logs_path)
+    writer = SummaryWriter(logs_dir)
+    print('Tensorboard 构建完成，进入路径：' + logs_dir)
     print('然后使用该指令查看训练过程：tensorboard --logdir=./')
 
     # 导入测试图像
-    for i, image_batch in enumerate(train_loader):
-        test_image = image_batch
-        break
-    test_image = test_image.to(device)
+    # for i, image_batch in enumerate(train_loader):
+    #     test_image = image_batch
+    #     break
+    # test_image = test_image.to(device)
+    test_image = next(iter(train_loader)).to(args.device)
     print('测试数据载入完成...')
 
     if True:
@@ -109,17 +105,16 @@ if __name__ == "__main__":
             train_loss = train_epoch(model_train, device, train_loader, criterion, optimizer, epoch, num_epochs, deepsupervision)
             # =====================valid============================
             # 无验证集，替换成在tensorboard中测试
-            # valid_loss = valid_epoch(model_train, device, valid_loader, criterion)
-            tensorboard_load(writer, model_train, train_loss, test_image, epoch, deepsupervision)
+            tensorboard_log(writer, model_train, train_loss, test_image, epoch, deepsupervision)
             # =====================updateLR=========================
             lr_scheduler.step()
             # =====================checkpoint=======================
             if train_loss["total_loss"] < best_loss:
                 best_loss = train_loss["total_loss"]
-                checkpoint(epoch, model_train, optimizer, lr_scheduler, checkpoint_dir, best_loss)
+                checkpoint_save(epoch, model_train, optimizer, lr_scheduler, checkpoints_dir, best_loss)
 
         writer.close()
         end_time = time.time()
         print('Finished Training')
-        print('训练耗时：', (end_time - start_time))
-        print('Best val loss: {:4f}'.format(best_loss))
+        print(f'训练耗时：{end_time - start_time:.2f}秒')
+        print('Best loss: {:4f}'.format(best_loss))

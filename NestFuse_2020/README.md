@@ -1,14 +1,39 @@
 # NestFuse
 
-* NestFuse 的 PyTorch 实现。
+---
 
-* 论文地址：
+### The re-implementation of IEEE Transactions 2020 NestFuse paper idea
+
+![](figure/framework.png)
+
+![](figure/train.png)
+
+This code is based on [H. Li, X. -J. Wu and T. Durrani, "NestFuse: An Infrared and Visible Image Fusion Architecture Based on Nest Connection and Spatial/Channel Attention Models," in IEEE Transactions on Instrumentation and Measurement, vol. 69, no. 12, pp. 9645-9656, Dec. 2020](https://ieeexplore.ieee.org/document/9127964)
+
+---
+
+## Description 描述
+
+- **基础框架：** AutoEncoder
+- **任务场景：** 用于红外可见光图像融合，Infrared Visible Fusion (IVF)。
+- **项目描述：** Nestfuse 的 PyTorch 实现。fusion strategy 基于注意力机制。
+- **论文地址：**
   - [arXiv](https://arxiv.org/abs/2007.00328)
-
-* 参考项目：
+  - [IEEEXplore](https://ieeexplore.ieee.org/document/9127964)
+- **参考项目：**
   - [imagefusion-nestfuse](https://github.com/hli1221/imagefusion-nestfuse) 官方代码。
+---
 
-## 文件结构
+## Idea 想法
+
+[MS-COCO 2014](http://images.cocodataset.org/zips/train2014.zip)(T.-Y. Lin, M. Maire, S. Belongie, J. Hays, P. Perona, D. Ramanan, P. Dollar, and C. L. Zitnick. Microsoft coco: Common objects in context. In ECCV, 2014. 3-5.) is utilized to train our auto-encoder network.
+
+In our fusion strategy, we focus on two types of features: spatial attention model and channel attention model. The extracted multi-scale deep features are processed in two phases.
+
+---
+
+## Structure 文件结构
+
 ```shell
 ├─fusion_test_data              # 用于测试的不同图片
 │  ├─Road          	  	# Gray  可见光+红外

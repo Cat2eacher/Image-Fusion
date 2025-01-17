@@ -51,7 +51,7 @@ def weights_init(model, init_type='normal', init_gain=0.02):
 '''
 
 
-def create_run_directory(base_dir='./runs'):
+def create_run_directory(args, base_dir='./runs'):
     """
     @desc：创建一个新的运行日志文件夹结构，包含logs和checkpoints子目录。
     @params：
@@ -71,13 +71,15 @@ def create_run_directory(base_dir='./runs'):
 
     # 定义并构建子目录路径
     # 子文件夹 logs 和 checkpoints
-    # log_path = os.path.join(run_path, "logs")
     checkpoints_path = os.path.join(run_path, "checkpoints")
+    tag = "Gray" if args.gray else "RGB"
+    logs_name = f"logs_{tag}_epoch={args.num_epochs}"
+    logs_path = os.path.join(run_path, logs_name)
 
     # 创建所需的目录结构
     os.makedirs(run_path, exist_ok=True)
-    # os.makedirs(log_path, exist_ok=True)
+    os.makedirs(logs_path, exist_ok=True)
     os.makedirs(checkpoints_path, exist_ok=True)
 
     # return run_path, log_path, checkpoints_path
-    return run_path, checkpoints_path
+    return run_path, checkpoints_path, logs_path

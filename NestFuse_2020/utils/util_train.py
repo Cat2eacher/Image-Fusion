@@ -16,7 +16,7 @@ def train_epoch(model, device, train_dataloader, criterion, optimizer, epoch, nu
                         "total_loss": [],
                         }
     pbar = tqdm(train_dataloader, total=len(train_dataloader))
-    for index, image_batch in enumerate(pbar, start=1):
+    for batch_idx, image_batch in enumerate(pbar, start=1):
         # 清空梯度  reset gradient
         optimizer.zero_grad()
         # 载入批量图像
@@ -52,19 +52,21 @@ def train_epoch(model, device, train_dataloader, criterion, optimizer, epoch, nu
         train_epoch_loss["total_loss"].append(loss.item())
 
         pbar.set_description(f'Epoch [{epoch + 1}/{num_Epoches}]')
-        # pbar.set_postfix(loss=loss.item(), train_acc)
-        pbar.set_postfix(
-            pixel_loss=pixel_loss_value.item(),
-            ssim_loss=ssim_loss_value.item(),
-            learning_rate=get_lr(optimizer),
-        )
-        # pbar.set_postfix(**{'loss': loss.item(),
-        #                     'lr': get_lr(optimizer),
-        #                     })
+        # pbar.set_postfix(
+        #     pixel_loss=pixel_loss_value.item(),
+        #     ssim_loss=ssim_loss_value.item(),
+        #     learning_rate=get_lr(optimizer),
+        # )
+        # 更新进度条信息
+        pbar.set_postfix({
+            'pixel_loss': f'{pixel_loss_value.item():.4f}',
+            'ssim_loss': f'{ssim_loss_value.item():.4f}',
+            'lr': f'{get_lr(optimizer):.6f}'
+        })
 
-    return {"mse_loss": np.average(train_epoch_loss["mse_loss"]),
-            "ssim_loss": np.average(train_epoch_loss["ssim_loss"]),
-            "total_loss": np.average(train_epoch_loss["total_loss"]),
+    return {"mse_loss": np.mean(train_epoch_loss["mse_loss"]),
+            "ssim_loss": np.mean(train_epoch_loss["ssim_loss"]),
+            "total_loss": np.mean(train_epoch_loss["total_loss"]),
             }
 
 
@@ -101,7 +103,7 @@ def valid_epoch(model, device, valid_dataloader, criterion):
 # ----------------------------------------------------#
 #   权重保存
 # ----------------------------------------------------#
-def checkpoint(epoch, model, optimizer, lr_scheduler, checkpoints_path, best_loss):
+def checkpoint_save(epoch, model, optimizer, lr_scheduler, checkpoints_path, best_loss):
     if not os.path.exists(checkpoints_path):
         os.mkdir(checkpoints_path)
     checkpoints = {'epoch': epoch,
@@ -112,19 +114,22 @@ def checkpoint(epoch, model, optimizer, lr_scheduler, checkpoints_path, best_los
                    'lr': lr_scheduler.state_dict(),
                    'best_loss': best_loss,
                    }
-    checkpoints_name = '/epoch%03d-loss%.3f.pth' % (epoch, best_loss)
-    save_path = checkpoints_path + checkpoints_name
+    checkpoints_name = f'epoch{epoch:03d}-loss{best_loss:.3f}.pth'
+    save_path = os.path.join(checkpoints_path, checkpoints_name)
     torch.save(checkpoints, save_path)
 
 
 # ----------------------------------------------------#
 #   tensorboard
 # ----------------------------------------------------#
-def tensorboard_load(writer, model, train_loss, test_image, epoch, deepsupervision):
+def tensorboard_log(writer, model, train_loss, test_image, epoch, deepsupervision):
     with torch.no_grad():
-        writer.add_scalar('pixel_loss', train_loss["mse_loss"].item(), global_step=epoch)
-        writer.add_scalar('ssim_loss', train_loss["ssim_loss"].item(), global_step=epoch)
-        writer.add_scalar('total_loss', train_loss["total_loss"].item(), global_step=epoch)
+        # 记录损失值
+        for loss_name, loss_value in train_loss.items():
+            writer.add_scalar(loss_name, loss_value, global_step=epoch)
+        # writer.add_scalar('pixel_loss', train_loss["mse_loss"].item(), global_step=epoch)
+        # writer.add_scalar('ssim_loss', train_loss["ssim_loss"].item(), global_step=epoch)
+        # writer.add_scalar('total_loss', train_loss["total_loss"].item(), global_step=epoch)
         if deepsupervision:
             rebuild_img = model(test_image)
             img_grid_real = torchvision.utils.make_grid(test_image, normalize=True, nrow=4)
@@ -138,8 +143,11 @@ def tensorboard_load(writer, model, train_loss, test_image, epoch, deepsupervisi
             writer.add_image('Rebuild image_3', img_grid_rebuild_3, global_step=epoch)
 
         else:
+            # 生成重建图像
             rebuild_img = model(test_image)
+            # 创建图像网格
             img_grid_real = torchvision.utils.make_grid(test_image, normalize=True, nrow=4)
             img_grid_rebuild = torchvision.utils.make_grid(rebuild_img, normalize=True, nrow=4)
+            # 记录图像
             writer.add_image('Real image', img_grid_real, global_step=1)
             writer.add_image('Rebuild image', img_grid_rebuild, global_step=epoch)
