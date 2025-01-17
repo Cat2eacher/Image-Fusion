@@ -28,9 +28,9 @@ if __name__ == '__main__':
     #   单对图像融合
     # ---------------------------------------------------#
     if True:
-        image1_path = "fusion_test_data/Tno/IR_images/IR3.png"
-        image2_path = "fusion_test_data/Tno/VIS_images/VIS3.png"
-        result_path = 'fusion_result/pair'
+        image1_path = "data_test/Tno/IR_images/IR3.png"
+        image2_path = "data_test/Tno/VIS_images/VIS3.png"
+        result_path = 'data_result/pair'
         if not os.path.exists(result_path):
             os.makedirs(result_path)
         Fusion_image = fusion_instance.run(image1_path, image2_path)
