@@ -13,8 +13,8 @@ from utils.util_train import train_epoch, tensorboard_log, checkpoint_save
 from utils.util_loss import *
 from models import fuse_model
 from configs import set_args
-# from tensorboardX import SummaryWriter
-from torch.utils.tensorboard import SummaryWriter
+from tensorboardX import SummaryWriter
+# from torch.utils.tensorboard import SummaryWriter
 
 '''
 /****************************************************/

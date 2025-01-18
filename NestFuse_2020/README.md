@@ -110,19 +110,35 @@ In our fusion strategy, we focus on two types of features: spatial attention mod
 * 你可以在运行窗口看到类似的如下信息：
 
 ```
-Epoch [91/100]: 100%|██████████████████| 2500/2500 [06:59<00:00,  5.96it/s, learning_rate=7.62e-9, pixel_loss=6.46e-5, ssim_loss=-2.98e-7]
-Epoch [92/100]: 100%|████████████████████| 2500/2500 [06:59<00:00,  5.96it/s, learning_rate=6.86e-9, pixel_loss=6.5e-5, ssim_loss=1.55e-6]
-Epoch [93/100]: 100%|███████████████████| 2500/2500 [06:59<00:00,  5.96it/s, learning_rate=6.17e-9, pixel_loss=4.22e-5, ssim_loss=1.71e-6]
-Epoch [94/100]: 100%|███████████████████| 2500/2500 [06:58<00:00,  5.97it/s, learning_rate=5.55e-9, pixel_loss=5.47e-5, ssim_loss=7.15e-7]
-Epoch [95/100]: 100%|██████████████████████| 2500/2500 [06:58<00:00,  5.97it/s, learning_rate=5e-9, pixel_loss=7.07e-5, ssim_loss=6.95e-7]
-Epoch [96/100]: 100%|████████████████████| 2500/2500 [06:58<00:00,  5.98it/s, learning_rate=4.5e-9, pixel_loss=5.83e-5, ssim_loss=1.55e-6]
-Epoch [97/100]: 100%|███████████████████| 2500/2500 [06:59<00:00,  5.96it/s, learning_rate=4.05e-9, pixel_loss=3.71e-5, ssim_loss=3.97e-8]
-Epoch [98/100]: 100%|████████████████████| 2500/2500 [06:58<00:00,  5.97it/s, learning_rate=3.64e-9, pixel_loss=1.8e-5, ssim_loss=1.21e-6]
-Epoch [99/100]: 100%|███████████████████| 2500/2500 [06:59<00:00,  5.97it/s, learning_rate=3.28e-9, pixel_loss=6.91e-5, ssim_loss=3.28e-6]
-Epoch [100/100]: 100%|██████████████████| 2500/2500 [06:59<00:00,  5.96it/s, learning_rate=2.95e-9, pixel_loss=4.66e-5, ssim_loss=1.69e-6]
+D:\Python\Miniconda\envs\fusion_gpu\python.exe E:\Git_Project\Image-Fusion\NestFuse_2020\run_train.py 
+==================模型超参数==================
+----------数据集相关参数----------
+image_path: ../dataset/COCO_train2014
+gray_images: True
+train_num: 80000
+----------训练相关参数----------
+device: cuda
+batch_size: 16
+num_epochs: 4
+num_workers: 0
+learning rate : 0.0001
+resume_path: None
+==================模型超参数==================
+Loaded 80000 images
+训练数据载入完成...
+设备就绪...
+Tensorboard 构建完成，进入路径：./runs\train_01-18_17-36\logs_Gray_epoch=4
+然后使用该指令查看训练过程：tensorboard --logdir=./
+测试数据载入完成...
+initialize network with normal type
+网络模型及优化器构建完成...
+Epoch [1/4]: 100%|██████████| 5000/5000 [32:34<00:00,  2.56it/s, pixel_loss=0.1000, ssim_loss=0.1832, lr=0.000100]
+Epoch [2/4]: 100%|██████████| 5000/5000 [27:50<00:00,  2.99it/s, pixel_loss=0.1027, ssim_loss=0.1788, lr=0.000090]
+Epoch [3/4]: 100%|██████████| 5000/5000 [28:46<00:00,  2.90it/s, pixel_loss=0.0002, ssim_loss=0.0000, lr=0.000081]
+Epoch [4/4]: 100%|██████████| 5000/5000 [27:49<00:00,  2.99it/s, pixel_loss=0.0001, ssim_loss=0.0000, lr=0.000073]
 Finished Training
-训练耗时： 42113.36333203316
-Best val loss: 0.000195
+训练耗时：7024.94秒
+Best loss: 0.002408
 ```
 
 * Tensorboard查看训练细节：

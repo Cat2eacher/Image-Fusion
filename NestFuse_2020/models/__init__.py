@@ -6,8 +6,8 @@ def fuse_model(model_name, input_nc, output_nc, deepsupervision=False):
     # 选择合适的模型
     model_ft = None
 
-    if model_name == "NestFuse_2020":
-        """ NestFuse_2020
+    if model_name == "NestFuse":
+        """ NestFuse
         """
         model_ft = NestFuse_autoencoder(input_nc=input_nc, output_nc=output_nc, deepsupervision=deepsupervision)
     elif model_name == "NestFuse_eval":
