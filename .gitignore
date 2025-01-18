@@ -1,4 +1,4 @@
 ## .gitignore for Image-Fusion
 
 # .gitignore for dataset
-dataset/
+dataset/.idea/
