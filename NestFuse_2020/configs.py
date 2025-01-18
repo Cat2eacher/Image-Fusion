@@ -27,7 +27,7 @@ def set_args():
     parser.add_argument('--train_num', default=80000, type=int, help='用于训练的图像数量')
     # 训练相关参数
     parser.add_argument('--device', type=str, default=device_on(), help='训练设备')
-    parser.add_argument('--batch_size', type=int, default=8, help='input batch size, default=4')
+    parser.add_argument('--batch_size', type=int, default=16, help='input batch size, default=4')
     parser.add_argument('--num_epochs', type=int, default=4, help='number of epochs to train for, default=10')
 
     parser.add_argument('--lr', type=float, default=1e-4, help='select the learning rate, default=1e-4')
