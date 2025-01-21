@@ -144,4 +144,3 @@ if __name__ == "__main__":
         # 保存结果
         save_image(fused_image, pair["output"])
         print(f"Fusion completed: {pair['output']}")
-

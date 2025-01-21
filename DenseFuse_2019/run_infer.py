@@ -7,7 +7,6 @@
 """
 
 import os
-import glob
 from tqdm import tqdm
 from torchvision.utils import save_image
 from utils.util_device import device_on

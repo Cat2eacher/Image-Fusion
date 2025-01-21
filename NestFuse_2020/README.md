@@ -35,38 +35,36 @@ In our fusion strategy, we focus on two types of features: spatial attention mod
 ## Structure 文件结构
 
 ```shell
-├─fusion_test_data              # 用于测试的不同图片
+├─ data——test             # 用于测试的不同图片
 │  ├─Road          	  	# Gray  可见光+红外
 │  └─Tno           		# Gray  可见光+红外
 │ 
-├─fusion_result    # run_fusion.py 的运行结果。使用训练好的权重对fusion_test_data内图像融合结果 
+├─ data_result    # run_infer.py 的运行结果。使用训练好的权重对fusion_test_data内图像融合结果 
 │ 
-├─models       
-│  ├─fusion_strategy            # 融合策略              
-│  └─NestFuse_2020                   # 网络模型
+├─ models       
+│  ├─ fusion_strategy            # 融合策略              
+│  └─ NestFuse                   # 网络模型
 │ 
-├─runs              # run_train.py 的运行结果
-│  └─train_02-22_07-29
-│     ├─checkpoints # 模型权重
-│     └─logs        # 用于存储训练过程中产生的Tensorboard文件
+├─ runs              # run_train.py 的运行结果
+│  └─ train_01-18_17-36
+│     ├─ checkpoints # 模型权重
+│     └─ logs        # 用于存储训练过程中产生的Tensorboard文件
 |
-├─utils      	                # 调用的功能函数
-│  ├─util_dataset.py            # 构建数据集
-│  ├─util_device.py        	# 运行设备 
-│  ├─util_fusion.py             # 模型推理
-│  ├─util_loss.py            	# 结构误差损失函数
-│  ├─util_train.py            	# 训练用相关函数
-│  └─utils.py                   # 其他功能函数
+├─ utils      	                # 调用的功能函数
+│  ├─ util_dataset.py            # 构建数据集
+│  ├─ util_device.py        	# 运行设备 
+│  ├─ util_fusion.py             # 模型推理
+│  ├─ util_loss.py            	# 结构误差损失函数
+│  ├─ util_train.py            	# 训练用相关函数
+│  └─ utils.py                   # 其他功能函数
 │ 
-├─configs.py 	    # 模型训练超参数
+├─ configs.py 	    # 模型训练超参数
 │ 
-├─run_fusion.py   # 该文件使用训练好的权重将test_data内的测试图像进行融合
+├─ run_infer.py   # 该文件使用训练好的权重将data_test内的测试图像进行融合
 │ 
-└─run_train.py      # 该文件用于训练模型
+└─ run_train.py      # 该文件用于训练模型
 
 ```
-
-
 
 ## 使用说明
 
@@ -166,20 +164,11 @@ Best loss: 0.002408
 * 你可以在运行窗口看到如下信息：
 
 ```shell
-runs/train_02-22_07-29/checkpoints/epoch025-loss0.000.pth model loaded.
+runs/train_01-18_17-36/checkpoints/epoch003-loss0.002.pth model loaded.
 载入数据...
 开始融合...
-输出路径：fusion_result/fusion_result_Roadfusion1.png
-输出路径：fusion_result/fusion_result_Roadfusion2.png
-输出路径：fusion_result/fusion_result_Roadfusion3.png
-输出路径：fusion_result/fusion_result_Roadfusion4.png
-输出路径：fusion_result/fusion_result_Roadfusion5.png
-输出路径：fusion_result/fusion_result_Roadfusion6.png
-输出路径：fusion_result/fusion_result_Roadfusion7.png
-输出路径：fusion_result/fusion_result_Roadfusion8.png
-输出路径：fusion_result/fusion_result_Roadfusion9.png
-输出路径：fusion_result/fusion_result_Roadfusion10.png
-输出路径：fusion_result/fusion_result_Roadfusion11.png
+Processing: 100%|██████████| 15/15 [00:29<00:00,  1.98s/it]
+Processing completed:15/15 images successfully fused
 ```
 
 
