@@ -66,7 +66,7 @@ In our fusion strategy, we focus on two types of features: spatial attention mod
 
 ```
 
-## 使用说明
+## Usage 使用说明
 
 ### Trainng
 
@@ -156,20 +156,23 @@ Best loss: 0.002408
 
 ### Fuse Image
 
-* 打开**run_fusion.py**文件，调整**defaults**参数
+* 打开**run_infer.py**文件，调整**configs**参数
   * 确定融合模式（Gray or RGB）
   * 确定原图像路径和权重路径
   * 确定保存路径
-* 运行**run_fusion.py**
+* 运行**run_infer.py**
 * 你可以在运行窗口看到如下信息：
 
 ```shell
 runs/train_01-18_17-36/checkpoints/epoch003-loss0.002.pth model loaded.
 载入数据...
 开始融合...
-Processing: 100%|██████████| 15/15 [00:29<00:00,  1.98s/it]
-Processing completed:15/15 images successfully fused
+Processing: 100%|██████████| 10323/10323 [1:11:52<00:00,  2.39it/s]
+Processing completed:10323/10323 images successfully fused
 ```
+
+！需要注意的是，在作者自己的数据集上，超过1k张图片显存拉满然后进度条不动了。
+所以在run_infer.py文件中有一个多线程处理的补充部分，多线程融合图像可以完成。
 
 
 

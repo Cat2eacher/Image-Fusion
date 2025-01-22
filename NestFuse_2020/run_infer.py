@@ -7,10 +7,13 @@
 """
 
 import os
+import time
+import torch
 from tqdm import tqdm
 from torchvision.utils import save_image
-from utils.util_device import device_on
+# from utils.util_device import device_on
 from utils.util_fusion import ImageFusion
+from concurrent.futures import ThreadPoolExecutor
 
 # 允许的图像扩展名
 image_extensions = (".jpg", ".jpeg", ".png", ".gif", ".bmp")
@@ -20,13 +23,13 @@ class FusionConfig:
     gray: bool = True
     model_name: str = 'NestFuse_eval'
     model_weights: str = "runs/train_01-18_17-36/checkpoints/epoch003-loss0.002.pth"
-    device: str = device_on()
-    deepsupervision: bool = True  # 可选: "mean", "max", "l1norm"
+    device: str = "cuda" if torch.cuda.is_available() else "cpu"
+    deepsupervision: bool = True
 
 
 '''
 /****************************************************/
-    main
+    mainc
 /****************************************************/
 '''
 if __name__ == '__main__':
@@ -34,7 +37,7 @@ if __name__ == '__main__':
     config = FusionConfig()
     fusion_model = ImageFusion(config)
 
-    task = "single-pair"  # 可选: "single-pair", "multi-pairs", "datasets"
+    task = "ThreadPool"  # 可选: "single-pair", "multi-pairs", "ThreadPool"
 
 
     # --------------------------------------#
@@ -43,8 +46,14 @@ if __name__ == '__main__':
     def process_single_pair(inf_path, vis_path, output_path):
         """处理单对图像"""
         try:
-            fused_image = fusion_model.run(inf_path, vis_path)
-            save_image(fused_image, output_path)
+            # 确保计算图不被保存，减少显存占用
+            with torch.no_grad():
+                fused_image = fusion_model.run(inf_path, vis_path)
+                save_image(fused_image, output_path)
+
+            # 关键点：手动释放内存
+            del fused_image  # 删除变量，释放内存
+            torch.cuda.empty_cache()  # 清空GPU缓存
             return True
         except Exception as e:
             print(f"Error processing {inf_path} and {vis_path}: {str(e)}")
@@ -100,7 +109,62 @@ if __name__ == '__main__':
 
 
     if task == "multi-pairs":
-        inf_dir = "data_test/Tno/INF_images"
-        vis_dir = "data_test/Tno/VIS_images"
-        output_dir = 'data_result/Tno'
+        inf_dir = "../dataset_dual/train/images_inf"
+        vis_dir = "../dataset_dual/train/images_vis"
+        output_dir = '../dataset_nestfuse/train/images'
+        # 记录开始时间
+        start_time = time.time()
+        successful, total = process_directory(inf_dir, vis_dir, output_dir)
+        # 输出统计信息
+        elapsed_time = time.time() - start_time
+        print(f"\n处理完成:")
+        print(f"成功数量: {successful}/{total}")
+        print(f"总耗时: {elapsed_time:.2f}秒")
+        print(f"平均速度: {elapsed_time / total:.3f}秒/张")
+
+    # --------------------------------------#
+    #   多线程处理整个目录的图像对
+    # --------------------------------------#
+    inf_dir = "../dataset_dual/train/images_inf"
+    vis_dir = "../dataset_dual/train/images_vis"
+    output_dir = '../dataset_nestfuse/train/images'
+
+
+    def process_directory_concurrent(inf_dir, vis_dir, output_dir):
+        """并行处理整个目录的图像对"""
+        os.makedirs(output_dir, exist_ok=True)
+        inf_images = sorted(
+            [os.path.join(inf_dir, file) for file in os.listdir(inf_dir) if file.lower().endswith(image_extensions)])
+        vis_images = sorted(
+            [os.path.join(vis_dir, file) for file in os.listdir(vis_dir) if file.lower().endswith(image_extensions)])
+
+        if len(inf_images) != len(vis_images):
+            raise ValueError("Number of INF and VIS images doesn't match!")
+
+        total = len(inf_images)
+        print('开始并行融合...')
+
+        successful = 0
+        start_time = time.time()
+
+        # 使用多线程处理
+        with ThreadPoolExecutor(max_workers=4) as executor:  # 根据 CPU 核心数调整 max_workers
+            futures = []
+            for idx, (inf_path, vis_path) in enumerate(zip(inf_images, vis_images)):
+                output_path = os.path.join(output_dir, f"fused_{idx:04d}.png")
+                futures.append(executor.submit(process_single_pair, inf_path, vis_path, output_path))
+
+            for future in tqdm(futures, total=total, desc="Processing"):
+                if future.result():  # 检查每个任务是否成功
+                    successful += 1
+
+        elapsed_time = time.time() - start_time
+        print(f"\n处理完成:")
+        print(f"成功数量: {successful}/{total}")
+        print(f"总耗时: {elapsed_time:.2f}秒")
+        print(f"平均速度: {elapsed_time / total:.3f}秒/张")
+        return successful, total
+
+
+    if task == "ThreadPool":
         successful, total = process_directory(inf_dir, vis_dir, output_dir)
