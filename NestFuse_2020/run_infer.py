@@ -100,7 +100,9 @@ if __name__ == '__main__':
         print('开始融合...')
         pbar = tqdm(zip(inf_images, vis_images), total=total, desc="Processing")
         for idx, (inf_path, vis_path) in enumerate(pbar):
-            output_path = os.path.join(output_dir, f"fused_{idx:04d}.png")
+            # output_path = os.path.join(output_dir, f"fused_{idx:04d}.png")
+            filename = os.path.basename(vis_path)  # 或者使用 ir_path.stem
+            output_path = os.path.join(output_dir, f'{filename}')
             if process_single_pair(inf_path, vis_path, output_path):
                 successful += 1
 
@@ -151,7 +153,9 @@ if __name__ == '__main__':
         with ThreadPoolExecutor(max_workers=4) as executor:  # 根据 CPU 核心数调整 max_workers
             futures = []
             for idx, (inf_path, vis_path) in enumerate(zip(inf_images, vis_images)):
-                output_path = os.path.join(output_dir, f"fused_{idx:04d}.png")
+                # output_path = os.path.join(output_dir, f"fused_{idx:04d}.png")
+                filename = os.path.basename(vis_path)  # 或者使用 ir_path.stem
+                output_path = os.path.join(output_dir, f'{filename}')
                 futures.append(executor.submit(process_single_pair, inf_path, vis_path, output_path))
 
             for future in tqdm(futures, total=total, desc="Processing"):
@@ -167,4 +171,4 @@ if __name__ == '__main__':
 
 
     if task == "ThreadPool":
-        successful, total = process_directory(inf_dir, vis_dir, output_dir)
+        successful, total = process_directory_concurrent(inf_dir, vis_dir, output_dir)
