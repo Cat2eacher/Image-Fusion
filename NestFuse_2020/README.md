@@ -35,7 +35,7 @@ In our fusion strategy, we focus on two types of features: spatial attention mod
 ## Structure 文件结构
 
 ```shell
-├─ data——test             # 用于测试的不同图片
+├─ data_test             # 用于测试的不同图片
 │  ├─Road          	  	# Gray  可见光+红外
 │  └─Tno           		# Gray  可见光+红外
 │ 

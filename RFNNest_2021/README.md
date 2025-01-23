@@ -1,27 +1,58 @@
 # RFN-Nest
 
-* RFN-Nest 的 PyTorch 实现。
-* 可见光和红外的图像融合。项目中是先将可见光RGB转为灰度图，进行两个灰度图的融合。
+---
 
-* 论文地址：
+### The re-implementation of Information Fusion 2021 RFN-Nest paper idea
+
+#### framework
+![](figure/framework.png)
+
+#### decoder
+![](figure/decoder.png)
+
+#### train-rfn
+![](figure/training-rfn.png)
+
+This code is based on [Hui Li, Xiao-Jun Wu*, Josef Kittler, "RFN-Nest: An end-to-end residual fusion network for infrared and visible images" in Information Fusion (IF:13.669), Volume: 73, Pages: 72-86, September 2021](https://www.sciencedirect.com/science/article/abs/pii/S1566253521000440?via%3Dihub)
+
+---
+
+## Description 描述
+
+- **基础框架：** AutoEncoder
+- **任务场景：** 用于红外可见光图像融合，Infrared Visible Fusion (IVF)。
+- **项目描述：** RFN-Nest 的 PyTorch 实现。项目中是先将可见光RGB转为灰度图，进行两个灰度图的融合。
+- **论文地址：**
   - [arXiv](https://arxiv.org/abs/2103.04286)
-
-* 参考项目：
+  - [ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S1566253521000440?via%3Dihub)
+- **参考项目：**
   - [imagefusion-rfn-nest](https://github.com/hli1221/imagefusion-rfn-nest) 官方代码。
   - 官方代码的融合策略中还整合了其他一些无需学习的融合算法。用于后续的实验对比。自己的代码里没有写其他融合算法。
 
-## 文件结构
+---
+
+## Idea 想法
+
+[MS-COCO 2014](http://images.cocodataset.org/zips/train2014.zip) (T.-Y. Lin, M. Maire, S. Belongie, J. Hays, P. Perona, D. Ramanan, P. Dollar, and C. L. Zitnick. Microsoft coco: Common objects in context. In ECCV, 2014. 3-5.) is utilized to train our AutoEncoder network.
+
+[KAIST](https://soonminhwang.github.io/rgbt-ped-detection/) (S. Hwang, J. Park, N. Kim, Y. Choi, I. So Kweon, Multispectral pedestrian detection: Benchmark dataset and baseline, in: Proceedings of the IEEE conference on computer vision and pattern recognition, 2015, pp. 1037–1045.) is utilized to train the RFN modules.
+
+---
+
+
+## Structure 文件结构
+
 ```shell
-├─fusion_test_data              # 用于测试的不同图片
+├─ data_test            # 用于测试的不同图片
 │  ├─LLVIP          	# RGB可见光 + Gray红外
 │  ├─Road          	  	# Gray  可见光+红外
 │  └─Tno           		# Gray  可见光+红外
 │ 
-├─fusion_result    # run_fusion.py 的运行结果。使用训练好的权重对fusion_test_data内图像融合结果 
+├─ data_result    # run_infer.py 的运行结果。使用训练好的权重对data_test内图像融合结果 
 │ 
-├─models       
-│  ├─fusion_strategy            # 融合策略              
-│  └─NestFuse                   # 网络模型
+├─ models       
+│  ├─ fusion_strategy            # 融合策略              
+│  └─ NestFuse                   # 网络模型
 │ 
 ├─runs              # run_train.py 的运行结果
 │  └─train_02-22_07-29
@@ -38,15 +69,13 @@
 │ 
 ├─configs.py 	    # 模型训练超参数
 │ 
-├─run_fusion.py   # 该文件使用训练好的权重将test_data内的测试图像进行融合
+├─run_infer.py   # 该文件使用训练好的权重将test_data内的测试图像进行融合
 │ 
 └─run_train.py      # 该文件用于训练模型
 
 ```
 
-
-
-## 使用说明
+## Usage 使用说明
 
 ### Trainng
 
@@ -205,11 +234,11 @@ Best val loss: 0.000928
 
 ### Fuse Image
 
-* 打开**run_fusion.py**文件，调整**defaults**参数
+* 打开**run_infer.py**文件，调整**defaults**参数
   * 确定融合模式（Gray or RGB）
   * 确定原图像路径和权重路径
   * 确定保存路径
-* 运行**run_fusion.py**
+* 运行**run_infer.py**
 
 
 

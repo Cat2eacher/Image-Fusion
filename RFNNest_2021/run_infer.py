@@ -36,8 +36,8 @@ if __name__ == '__main__':
     #   单对图像融合
     # ---------------------------------------------------#
     if True:
-        image1_path = "fusion_test_data/LLVIP/visible/010001.jpg"
-        image2_path = "fusion_test_data/LLVIP/infrared/010001.jpg"
+        image1_path = "data_test/LLVIP/visible/010001.jpg"
+        image2_path = "data_test/LLVIP/infrared/010001.jpg"
 
         # image1_path = "fusion_test_data/Road/1/1.jpg"
         # image2_path = "fusion_test_data/Road/2/1.jpg"
