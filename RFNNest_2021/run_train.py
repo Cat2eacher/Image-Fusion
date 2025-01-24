@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """
 @file name:run_train.py
-@desc: RFN-Nest模型训练
+@desc: This script defines the training procedure of RFN-Nest
 @Writer: Cat2eacher
-@Date: 2024/04/07
+@Date: 2025/01/23
 """
 import time
 from torch.utils.data import DataLoader
@@ -14,6 +14,7 @@ from utils.util_loss import *
 from models import fuse_model
 from models.fusion_strategy import Residual_Fusion_Network
 from configs import set_args
+# from tensorboardX import SummaryWriter
 from torch.utils.tensorboard import SummaryWriter
 
 '''
@@ -58,13 +59,14 @@ if __name__ == "__main__":
                                     image_num=args.train_num)
         train_loader = DataLoader(dataset=coco_dataset, batch_size=args.batch_size, shuffle=True,
                                   num_workers=args.num_workers)
-        print('autoencoder 阶段训练数据载入完成...')
+        print('----autoencoder---- 阶段训练数据载入完成...')
 
         # 导入测试图像
-        for i, image_batch in enumerate(train_loader):
-            test_image = image_batch
-            break
-        test_image = test_image.to(device)
+        # for i, image_batch in enumerate(train_loader):
+        #     test_image = image_batch
+        #     break
+        # test_image = test_image.to(device)
+        test_image = next(iter(train_loader)).to(args.device)
         print('测试数据载入完成...')
 
         # ------------------------------------#
@@ -118,7 +120,7 @@ if __name__ == "__main__":
                                      deepsupervision)
             # =====================valid============================
             # 无验证集，替换成在tensorboard中测试
-            tensorboard_load(writer, nest_model, train_loss, test_image, epoch, deepsupervision)
+            tensorboard_log(writer, nest_model, train_loss, test_image, epoch, deepsupervision)
             # =====================updateLR=========================
             lr_scheduler.step()
             # =====================checkpoint=======================
@@ -126,11 +128,11 @@ if __name__ == "__main__":
                 best_loss = train_loss["total_loss"]
                 checkpoint_save(epoch, nest_model, optimizer, lr_scheduler, checkpoints_path, best_loss)
 
+        writer.close()
         end_time = time.time()
         print('Finished Training')
-        print('训练耗时：', (end_time - start_time))
-        print('Best val loss: {:4f}'.format(best_loss))
-        writer.close()
+        print(f'训练耗时：{end_time - start_time:.2f}秒')
+        print('Best loss: {:4f}'.format(best_loss))
 
     # ----------------------------------------------------#
     #           训练RFN
@@ -145,12 +147,14 @@ if __name__ == "__main__":
                                        file_num=args.train_num)
         train_loader = DataLoader(dataset=rfn_dataset, batch_size=args.batch_size, shuffle=True,
                                   num_workers=args.num_workers)
-        print('fpn 阶段训练数据载入完成...')
+        print('-----fpn----- 阶段训练数据载入完成...')
 
         # 导入测试图像
-        for i, image_batch in enumerate(train_loader):
-            test_image = image_batch
-            break
+        # for i, image_batch in enumerate(train_loader):
+        #     test_image = image_batch
+        #     break
+        # print('测试数据载入完成...')
+        test_image = next(iter(train_loader)).to(args.device)
         print('测试数据载入完成...')
 
         # ------------------------------------#
@@ -163,7 +167,7 @@ if __name__ == "__main__":
             in_channel = 1 if args.gray else 3
             out_channel = 1 if args.gray else 3
             nest_model = fuse_model(model_name, in_channel, out_channel, deepsupervision)
-            nest_model.to(device)  # 模型部署
+            # nest_model.to(device)  # 模型部署
 
         #   RFN 网络模型 fusion network
         fusion_model = Residual_Fusion_Network()
@@ -224,15 +228,16 @@ if __name__ == "__main__":
                                          num_epochs)
             # =====================valid============================
             # 无验证集，替换成在tensorboard中测试
-            tensorboard_load_rfn(writer, model, train_loss, test_image, device, epoch, deepsupervision)
+            tensorboard_log_rfn(writer, model, train_loss, test_image, device, epoch, deepsupervision)
             # =====================updateLR=========================
             lr_scheduler.step()
             # =====================checkpoint=======================
             if train_loss["total_loss"] < best_loss or epoch == 0:
                 best_loss = train_loss["total_loss"]
                 checkpoint_save_rfn(epoch, model["fusion_model"], optimizer, lr_scheduler, checkpoints_path, best_loss)
+
+        writer.close()
         end_time = time.time()
         print('Finished Training')
-        print('训练耗时：', (end_time - start_time))
-        print('Best val loss: {:4f}'.format(best_loss))
-        writer.close()
+        print(f'训练耗时：{end_time - start_time:.2f}秒')
+        print('Best loss: {:4f}'.format(best_loss))

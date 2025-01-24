@@ -2,184 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bfeafc9a-37fe-4eb6-91ea-92a62240f9e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../RFNNest_2021/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RFNNest_2021/.idea/deployment.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../RFNNest_2021/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/.idea/DenseFuse.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/.idea/RFNNest.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/.idea/workspace.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/configs.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/configs.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/LLVIP/infrared/010001.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/LLVIP/infrared/010001.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/LLVIP/infrared/010002.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/LLVIP/infrared/010002.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/LLVIP/infrared/010003.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/LLVIP/infrared/010003.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/LLVIP/infrared/010004.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/LLVIP/infrared/010004.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/LLVIP/infrared/010005.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/LLVIP/infrared/010005.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/LLVIP/infrared/010006.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/LLVIP/infrared/010006.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/LLVIP/infrared/010007.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/LLVIP/infrared/010007.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/LLVIP/infrared/010008.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/LLVIP/infrared/010008.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/LLVIP/infrared/010009.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/LLVIP/infrared/010009.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/LLVIP/infrared/010010.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/LLVIP/infrared/010010.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/LLVIP/visible/010001.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/LLVIP/visible/010001.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/LLVIP/visible/010002.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/LLVIP/visible/010002.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/LLVIP/visible/010003.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/LLVIP/visible/010003.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/LLVIP/visible/010004.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/LLVIP/visible/010004.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/LLVIP/visible/010005.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/LLVIP/visible/010005.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/LLVIP/visible/010006.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/LLVIP/visible/010006.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/LLVIP/visible/010007.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/LLVIP/visible/010007.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/LLVIP/visible/010008.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/LLVIP/visible/010008.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/LLVIP/visible/010009.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/LLVIP/visible/010009.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/LLVIP/visible/010010.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/LLVIP/visible/010010.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/10.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/11.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/12.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/13.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/14.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/15.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/16.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/17.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/18.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/19.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/20.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/21.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/21.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/22.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/23.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/23.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/24.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/24.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/25.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/25.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/26.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/26.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/27.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/27.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/28.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/28.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/29.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/29.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/30.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/30.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/31.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/31.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/33.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/33.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/34.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/34.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/35.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/35.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/36.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/36.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/37.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/37.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/38.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/38.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/39.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/39.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/40.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/40.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/41.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/41.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/42.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/42.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/43.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/43.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/44.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/44.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/45.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/45.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/46.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/46.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/47.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/47.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/49.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/49.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/50.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/50.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/1/9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/1/9.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/10.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/10.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/11.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/11.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/12.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/12.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/13.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/13.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/14.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/14.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/15.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/15.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/16.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/16.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/17.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/17.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/18.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/18.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/19.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/19.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/2.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/20.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/20.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/21.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/21.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/22.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/22.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/23.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/23.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/24.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/24.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/25.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/25.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/26.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/26.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/27.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/27.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/28.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/28.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/29.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/29.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/3.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/30.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/30.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/31.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/31.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/32.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/32.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/33.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/33.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/34.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/34.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/35.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/35.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/36.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/36.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/37.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/37.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/38.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/38.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/39.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/39.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/4.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/40.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/40.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/41.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/41.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/42.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/42.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/43.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/43.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/44.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/44.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/45.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/45.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/46.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/46.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/47.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/47.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/48.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/48.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/49.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/49.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/5.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/5.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/50.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/50.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/6.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/6.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/7.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/7.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/8.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/8.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Road/2/9.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Road/2/9.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/IR_images/IR1.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/IR_images/IR1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/IR_images/IR10.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/IR_images/IR10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/IR_images/IR11.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/IR_images/IR11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/IR_images/IR12.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/IR_images/IR12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/IR_images/IR13.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/IR_images/IR13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/IR_images/IR14.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/IR_images/IR14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/IR_images/IR15.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/IR_images/IR15.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/IR_images/IR16.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/IR_images/IR16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/IR_images/IR17.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/IR_images/IR17.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/IR_images/IR18.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/IR_images/IR18.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/IR_images/IR19.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/IR_images/IR19.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/IR_images/IR2.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/IR_images/IR2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/IR_images/IR20.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/IR_images/IR20.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/IR_images/IR21.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/IR_images/IR21.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/IR_images/IR3.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/IR_images/IR3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/VIS_images/VIS1.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/VIS_images/VIS1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/VIS_images/VIS10.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/VIS_images/VIS10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/VIS_images/VIS11.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/VIS_images/VIS11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/VIS_images/VIS12.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/VIS_images/VIS12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/VIS_images/VIS13.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/VIS_images/VIS13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/VIS_images/VIS14.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/VIS_images/VIS14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/VIS_images/VIS15.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/VIS_images/VIS15.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/VIS_images/VIS16.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/VIS_images/VIS16.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/VIS_images/VIS17.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/VIS_images/VIS17.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/VIS_images/VIS18.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/VIS_images/VIS18.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/VIS_images/VIS19.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/VIS_images/VIS19.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/VIS_images/VIS2.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/VIS_images/VIS2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/VIS_images/VIS20.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/VIS_images/VIS20.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/VIS_images/VIS21.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/VIS_images/VIS21.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/fusion_test_data/Tno/VIS_images/VIS3.png" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/data_test/Tno/VIS_images/VIS3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/models/NestFuse.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/models/NestFuse.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/models/fusion_strategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/models/fusion_strategy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/run_fusion.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/run_infer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/run_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/run_train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/runs/train_04-11_12-52/checkpoints/epoch009-loss0.087.pth" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/runs/train_04-11_12-52/checkpoints/epoch009-loss0.087.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/runs/train_04-11_16-25/checkpoints/epoch009-loss0.001.pth" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/runs/train_04-11_16-25/checkpoints/epoch009-loss0.001.pth" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/utils/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/utils/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/utils/util_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/utils/util_dataset.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/utils/util_device.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/utils/util_device.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/utils/util_fusion.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/utils/util_fusion.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/utils/util_loss.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/utils/util_loss.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/utils/util_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/utils/util_train.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../RFN_Nest/utils/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/utils/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RFNNest_2021/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RFNNest_2021/run_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/run_train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RFNNest_2021/utils/util_dataset.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/utils/util_dataset.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RFNNest_2021/utils/util_train.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/utils/util_train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../RFNNest_2021/utils/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/../RFNNest_2021/utils/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +31,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/Git_Project/Image-Fusion/NestFuse_2020",
+    "last_opened_file_path": "E:/Git_Project/Image-Fusion/RFNNest_2021",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
@@ -355,6 +183,8 @@
       <workItem from="1737589806534" duration="17000" />
       <workItem from="1737589847649" duration="603000" />
       <workItem from="1737631480411" duration="2752000" />
+      <workItem from="1737640412564" duration="961000" />
+      <workItem from="1737675236529" duration="1967000" />
     </task>
     <servers />
   </component>

@@ -64,6 +64,7 @@ def create_run_directory(args, base_dir='./runs'):
     # 获取当前时间戳
     current_time = datetime.datetime.now()
     time_str = current_time.strftime('%m-%d_%H-%M')
+
     # 构建此次运行的唯一标识符作为子目录名称
     run_identifier = f"train_{time_str}"
     run_path = os.path.join(base_dir, run_identifier)

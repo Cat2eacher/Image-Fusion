@@ -19,7 +19,7 @@ def train_epoch(model, device, train_dataloader, criterion, optimizer, epoch, nu
                         "total_loss": [],
                         }
     pbar = tqdm(train_dataloader, total=len(train_dataloader))
-    for index, image_batch in enumerate(pbar, start=1):
+    for batch_idx, image_batch in enumerate(pbar, start=1):
         # 清空梯度  reset gradient
         optimizer.zero_grad()
         # 载入批量图像
@@ -58,18 +58,24 @@ def train_epoch(model, device, train_dataloader, criterion, optimizer, epoch, nu
 
         pbar.set_description(f'Epoch [{epoch + 1}/{num_Epoches}]')
         # pbar.set_postfix(loss=loss.item(), train_acc)
-        pbar.set_postfix(
-            pixel_loss=pixel_loss_value.item(),
-            ssim_loss=ssim_loss_value.item(),
-            learning_rate=get_lr(optimizer),
-        )
+        # pbar.set_postfix(
+        #     pixel_loss=pixel_loss_value.item(),
+        #     ssim_loss=ssim_loss_value.item(),
+        #     learning_rate=get_lr(optimizer),
+        # )
+        # 更新进度条信息
+        pbar.set_postfix({
+            'pixel_loss': f'{pixel_loss_value.item():.4f}',
+            'ssim_loss': f'{ssim_loss_value.item():.4f}',
+            'lr': f'{get_lr(optimizer):.6f}'
+        })
         # pbar.set_postfix(**{'loss': loss.item(),
         #                     'lr': get_lr(optimizer),
         #                     })
 
-    return {"mse_loss": np.average(train_epoch_loss["mse_loss"]),
-            "ssim_loss": np.average(train_epoch_loss["ssim_loss"]),
-            "total_loss": np.average(train_epoch_loss["total_loss"]),
+    return {"mse_loss": np.mean(train_epoch_loss["mse_loss"]),
+            "ssim_loss": np.mean(train_epoch_loss["ssim_loss"]),
+            "total_loss": np.mean(train_epoch_loss["total_loss"]),
             }
 
 
@@ -84,21 +90,22 @@ def train_epoch_rfn(model, device, train_dataloader, criterion, optimizer, epoch
                         "total_loss": [],
                         }
     pbar = tqdm(train_dataloader, total=len(train_dataloader))
-    for batch_index, (vi_batch, ir_batch) in enumerate(pbar, start=1):
+    for batch_idx, (inf_batch, vis_batch) in enumerate(pbar, start=1):
         # 清空梯度  reset gradient
         optimizer.zero_grad()
         # 载入批量图像
-        vi_batch, ir_batch = vi_batch.to(device), ir_batch.to(device)
+        inf_batch = inf_batch.to(device)
+        vis_batch = vis_batch.to(device)
         # 前向传播
         # encoder
-        en_vi = model["nest_model"].encoder(vi_batch)
-        en_ir = model["nest_model"].encoder(ir_batch)
+        features_inf = model["nest_model"].encoder(inf_batch)
+        features_vis = model["nest_model"].encoder(vis_batch)
         # fusion
-        f = model["fusion_model"](en_vi, en_ir)
+        f = model["fusion_model"](features_inf, features_vis)
         # decoder
         outputs = model["nest_model"].decoder_train(f)
-        detail_loss_value = criterion["detail_loss"](outputs, vi_batch)
-        feature_loss_value = criterion["feature_loss"](f, en_vi, en_ir)
+        detail_loss_value = criterion["detail_loss"](outputs, vis_batch)
+        feature_loss_value = criterion["feature_loss"](f, features_vis, features_inf)
         loss = feature_loss_value + criterion["alpha"] * detail_loss_value
         # 反向传播
         loss.backward()
@@ -120,9 +127,9 @@ def train_epoch_rfn(model, device, train_dataloader, criterion, optimizer, epoch
         #                     'lr': get_lr(optimizer),
         #                     })
 
-    return {"detail_loss": np.average(train_epoch_loss["detail_loss"]),
-            "feature_loss": np.average(train_epoch_loss["feature_loss"]),
-            "total_loss": np.average(train_epoch_loss["total_loss"]),
+    return {"detail_loss": np.mean(train_epoch_loss["detail_loss"]),
+            "feature_loss": np.mean(train_epoch_loss["feature_loss"]),
+            "total_loss": np.mean(train_epoch_loss["total_loss"]),
             }
 
 
@@ -140,8 +147,8 @@ def checkpoint_save(epoch, model, optimizer, lr_scheduler, checkpoints_path, bes
                    # 'lr': lr_scheduler.state_dict(),
                    # 'best_loss': best_loss,
                    }
-    checkpoints_name = '/epoch%03d-loss%.3f.pth' % (epoch, best_loss)
-    save_path = checkpoints_path + checkpoints_name
+    checkpoints_name = f'epoch{epoch:03d}-loss{best_loss:.3f}.pth'
+    save_path = os.path.join(checkpoints_path, checkpoints_name)
     torch.save(checkpoints, save_path)
 
 
@@ -154,19 +161,22 @@ def checkpoint_save_rfn(epoch, model, optimizer, lr_scheduler, checkpoints_path,
                    # 'lr': lr_scheduler.state_dict(),
                    # 'best_loss': best_loss,
                    }
-    checkpoints_name = '/epoch%03d-loss%.3f.pth' % (epoch, best_loss)
-    save_path = checkpoints_path + checkpoints_name
+    checkpoints_name = f'epoch{epoch:03d}-loss{best_loss:.3f}.pth'
+    save_path = os.path.join(checkpoints_path, checkpoints_name)
     torch.save(checkpoints, save_path)
 
 
 # ----------------------------------------------------#
 #   tensorboard
 # ----------------------------------------------------#
-def tensorboard_load(writer, model, train_loss, test_image, epoch, deepsupervision):
+def tensorboard_log(writer, model, train_loss, test_image, epoch, deepsupervision):
     with torch.no_grad():
-        writer.add_scalar('pixel_loss', train_loss["mse_loss"].item(), global_step=epoch)
-        writer.add_scalar('ssim_loss', train_loss["ssim_loss"].item(), global_step=epoch)
-        writer.add_scalar('total_loss', train_loss["total_loss"].item(), global_step=epoch)
+        # 记录损失值
+        for loss_name, loss_value in train_loss.items():
+            writer.add_scalar(loss_name, loss_value, global_step=epoch)
+        # writer.add_scalar('pixel_loss', train_loss["mse_loss"].item(), global_step=epoch)
+        # writer.add_scalar('ssim_loss', train_loss["ssim_loss"].item(), global_step=epoch)
+        # writer.add_scalar('total_loss', train_loss["total_loss"].item(), global_step=epoch)
         if deepsupervision:
             feature_encoded = model.encoder(test_image)
             rebuild_img = model.decoder_train(feature_encoded)
@@ -189,7 +199,7 @@ def tensorboard_load(writer, model, train_loss, test_image, epoch, deepsupervisi
             writer.add_image('Rebuild image', img_grid_rebuild, global_step=epoch)
 
 
-def tensorboard_load_rfn(writer, model, train_loss, test_image, device, epoch, deepsupervision):
+def tensorboard_log_rfn(writer, model, train_loss, test_image, device, epoch, deepsupervision):
     with torch.no_grad():
         writer.add_scalar('detail_loss', train_loss["detail_loss"].item(), global_step=epoch)
         writer.add_scalar('feature_loss', train_loss["feature_loss"].item(), global_step=epoch)
