@@ -37,6 +37,9 @@ This code is based on [Hui Li, Xiao-Jun Wu*, Josef Kittler, "RFN-Nest: An end-to
 
 [KAIST](https://soonminhwang.github.io/rgbt-ped-detection/) (S. Hwang, J. Park, N. Kim, Y. Choi, I. So Kweon, Multispectral pedestrian detection: Benchmark dataset and baseline, in: Proceedings of the IEEE conference on computer vision and pattern recognition, 2015, pp. 1037–1045.) is utilized to train the RFN modules.
 
+对KASIT数据集的介绍可以看：
+- https://zhuanlan.zhihu.com/p/722196868
+- https://www.cnblogs.com/kongen/p/18080535
 ---
 
 
@@ -44,9 +47,9 @@ This code is based on [Hui Li, Xiao-Jun Wu*, Josef Kittler, "RFN-Nest: An end-to
 
 ```shell
 ├─ data_test            # 用于测试的不同图片
-│  ├─LLVIP          	# RGB可见光 + Gray红外
-│  ├─Road          	  	# Gray  可见光+红外
-│  └─Tno           		# Gray  可见光+红外
+│  ├─ LLVIP          	# RGB可见光 + Gray红外
+│  ├─ Road          	  	# Gray  可见光+红外
+│  └─ Tno           		# Gray  可见光+红外
 │ 
 ├─ data_result    # run_infer.py 的运行结果。使用训练好的权重对data_test内图像融合结果 
 │ 
@@ -54,30 +57,31 @@ This code is based on [Hui Li, Xiao-Jun Wu*, Josef Kittler, "RFN-Nest: An end-to
 │  ├─ fusion_strategy            # 融合策略              
 │  └─ NestFuse                   # 网络模型
 │ 
-├─runs              # run_train.py 的运行结果
-│  └─train_02-22_07-29
-│     ├─checkpoints # 模型权重
-│     └─logs        # 用于存储训练过程中产生的Tensorboard文件
-|
-├─utils      	                # 调用的功能函数
-│  ├─util_dataset.py            # 构建数据集
-│  ├─util_device.py        	# 运行设备 
-│  ├─util_fusion.py             # 模型推理
-│  ├─util_loss.py            	# 结构误差损失函数
-│  ├─util_train.py            	# 训练用相关函数
-│  └─utils.py                   # 其他功能函数
+├─ runs              # run_train.py 的运行结果
+│  ├─ train_autoencoder_byCOCO2014
+│  │  ├─ checkpoints # 模型权重
+│  │  └─ logs        # 用于存储训练过程中产生的Tensorboard文件
+│  ├─ train_rfn_byKAIST
+│  ├─ train_autoencoder_byCOCO2014
+│  └─ train_rfn_byLLVIP
+│
+├─ utils      	                # 调用的功能函数
+│  ├─ util_dataset.py            # 构建数据集
+│  ├─ util_device.py        	    # 运行设备 
+│  ├─ util_fusion.py             # 模型推理
+│  ├─ util_loss.py            	# 结构误差损失函数
+│  ├─ util_train.py            	# 训练用相关函数
+│  └─ utils.py                   # 其他功能函数
 │ 
-├─configs.py 	    # 模型训练超参数
+├─ configs.py 	    # 模型训练超参数
 │ 
-├─run_infer.py   # 该文件使用训练好的权重将test_data内的测试图像进行融合
+├─ run_infer.py   # 该文件使用训练好的权重将test_data内的测试图像进行融合
 │ 
-└─run_train.py      # 该文件用于训练模型
+└─ run_train.py      # 该文件用于训练模型
 
 ```
 
 ## Usage 使用说明
-
-### Trainng
 
 #### 从零开始训练
 
@@ -135,7 +139,80 @@ def set_args():
 * 你可以在运行窗口看到类似的如下信息：
 
 ```
-autoencoder training:
+autoencoder training by COCO2014:
+==================模型超参数==================
+----------数据集相关参数----------
+image_path_autoencoder: ../dataset/COCO_train2014
+image_path_rfn: None
+gray_images: True
+train_num: 80000
+----------训练相关参数----------
+RFN: False
+deepsupervision: False
+resume_nestfuse: None
+resume_rfn: None
+device: cuda
+batch_size: 4
+num_workers: 0
+num_epochs: 4
+learning rate : 0.0001
+==================模型超参数==================
+设备就绪...
+Tensorboard 构建完成，进入路径：./runs\train_01-24_10-43\logs_Gray_epoch=4
+然后使用该指令查看训练过程：tensorboard --logdir=./
+Loaded 80000 images
+----autoencoder---- 阶段训练数据载入完成...
+测试数据载入完成...
+initialize network with normal type
+网络模型及优化器构建完成...
+Epoch [1/4]: 100%|██████████| 20000/20000 [1:37:00<00:00,  3.44it/s, pixel_loss=0.0000, ssim_loss=0.0000, lr=0.000100]
+Epoch [2/4]: 100%|██████████| 20000/20000 [1:30:42<00:00,  3.67it/s, pixel_loss=0.0000, ssim_loss=0.0000, lr=0.000090]
+Epoch [3/4]: 100%|██████████| 20000/20000 [1:31:32<00:00,  3.64it/s, pixel_loss=0.0000, ssim_loss=0.0000, lr=0.000081]
+Epoch [4/4]: 100%|██████████| 20000/20000 [1:33:18<00:00,  3.57it/s, pixel_loss=0.0000, ssim_loss=0.0000, lr=0.000073]
+Finished Training
+训练耗时：22354.39秒
+Best loss: 0.002613
+
+
+rfn training by KAIST:
+==================模型超参数==================
+----------数据集相关参数----------
+image_path_autoencoder: ../dataset/COCO_train2014
+image_path_rfn: ../dataset/KAIST
+gray_images: True
+train_num: 95000
+----------训练相关参数----------
+RFN: True
+deepsupervision: False
+resume_nestfuse: runs/train_autoencoder/checkpoints/epoch003-loss0.003.pth
+resume_rfn: None
+device: cuda
+batch_size: 4
+num_workers: 0
+num_epochs: 4
+learning rate : 0.0001
+==================模型超参数==================
+设备就绪...
+Tensorboard 构建完成，进入路径：./runs\train_01-24_21-32\logs_Gray_epoch=4
+然后使用该指令查看训练过程：tensorboard --logdir=./
+-----fpn----- 阶段 训练数据载入完成...
+测试数据载入完成...
+Resuming, initializing auto-encoder using weight from runs/train_autoencoder/checkpoints/epoch003-loss0.003.pth.
+加载AutoEncoder部分权重完成。
+initialize network with normal type
+初始化 RFN 部分权重完成。
+Epoch [1/4]: 100%|██████████| 23750/23750 [3:02:30<00:00,  2.17it/s, detail_loss=1.93e-5, feature_loss=0.0392, learning_rate=0.0001]
+Epoch [2/4]: 100%|██████████| 23750/23750 [3:00:48<00:00,  2.19it/s, detail_loss=7.15e-6, feature_loss=0.0414, learning_rate=9e-5]
+Epoch [3/4]: 100%|██████████| 23750/23750 [2:58:49<00:00,  2.21it/s, detail_loss=6.91e-6, feature_loss=0.0206, learning_rate=8.1e-5]
+Epoch [4/4]: 100%|██████████| 23750/23750 [2:58:48<00:00,  2.21it/s, detail_loss=9.3e-6, feature_loss=0.0149, learning_rate=7.29e-5]
+Finished Training
+训练耗时：43258.09秒
+Best loss: 0.044001
+```
+
+
+```
+autoencoder training by COCO2017:
 ==================模型超参数==================
 ----------数据集相关参数----------
 image_path_autoencoder: /data/public/coco/train2017
@@ -175,7 +252,7 @@ Finished Training
 Best val loss: 0.086511
 
 
-rfn training:
+rfn training by LLVIP:
 ==================模型超参数==================
 ----------数据集相关参数----------
 image_path_autoencoder: /data/public/coco/train2017
@@ -239,6 +316,13 @@ Best val loss: 0.000928
   * 确定原图像路径和权重路径
   * 确定保存路径
 * 运行**run_infer.py**
+
+!! 注意：
+先使用COCO2014和KAIST数据集训练，发现效果很差（主要是KAIST效果差）
+
+所有有了用COCO2017和LLVIP数据集训练的版本，
+
+在调用模型权重的时候需要注意。
 
 
 

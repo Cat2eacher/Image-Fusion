@@ -93,14 +93,17 @@ class BracketedDataset(Dataset):
 
     def _prepare_files(self):
         # 获取并排序文件列表
-        self.inf_files = sorted(
-            [f for f in os.listdir(self.inf_dir_path) if f.lower().endswith(('.png', '.jpg', '.jpeg'))],
-            key=lambda x: int(os.path.splitext(x)[0])
-        )
-        self.vis_files = sorted(
-            [f for f in os.listdir(self.vis_dir_path) if f.lower().endswith(('.png', '.jpg', '.jpeg'))],
-            key=lambda x: int(os.path.splitext(x)[0])
-        )
+        # self.inf_files = sorted(
+        #     [f for f in os.listdir(self.inf_dir_path) if f.lower().endswith(('.png', '.jpg', '.jpeg'))],
+        #     key=lambda x: int(os.path.splitext(x)[0])
+        # )
+        # self.vis_files = sorted(
+        #     [f for f in os.listdir(self.vis_dir_path) if f.lower().endswith(('.png', '.jpg', '.jpeg'))],
+        #     key=lambda x: int(os.path.splitext(x)[0])
+        # )
+
+        self.inf_files = sorted([f for f in os.listdir(self.inf_dir_path) if f.lower().endswith(('.png', '.jpg', '.jpeg'))])
+        self.vis_files = sorted([f for f in os.listdir(self.vis_dir_path) if f.lower().endswith(('.png', '.jpg', '.jpeg'))])
 
         # 如果指定了文件数量限制
         if self.file_num is not None:

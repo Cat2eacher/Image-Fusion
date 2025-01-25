@@ -14,8 +14,8 @@ from utils.util_loss import *
 from models import fuse_model
 from models.fusion_strategy import Residual_Fusion_Network
 from configs import set_args
-# from tensorboardX import SummaryWriter
-from torch.utils.tensorboard import SummaryWriter
+from tensorboardX import SummaryWriter
+# from torch.utils.tensorboard import SummaryWriter
 
 '''
 /****************************************************/
@@ -111,7 +111,7 @@ if __name__ == "__main__":
             weights_init(nest_model)
             init_epoch = 0
         print('网络模型及优化器构建完成...')
-
+        time.sleep(1)
         best_loss = 100.0
         start_time = time.time()
         for epoch in range(init_epoch, num_epochs):
@@ -142,19 +142,20 @@ if __name__ == "__main__":
         #   数据集
         # ------------------------------------#
         rfn_dataset = BracketedDataset(root=args.image_path_rfn,
-                                       image_dir=["visible/train", "infrared/train"],
+                                       image_dir=["inf", "vis"],
                                        transform=image_transform(gray=args.gray),
                                        file_num=args.train_num)
         train_loader = DataLoader(dataset=rfn_dataset, batch_size=args.batch_size, shuffle=True,
                                   num_workers=args.num_workers)
-        print('-----fpn----- 阶段训练数据载入完成...')
+        print('-----fpn----- 阶段 训练数据载入完成...')
 
         # 导入测试图像
         # for i, image_batch in enumerate(train_loader):
         #     test_image = image_batch
         #     break
         # print('测试数据载入完成...')
-        test_image = next(iter(train_loader)).to(args.device)
+        # est_image = next(iter(train_loader)).to(args.device)
+        test_image = next(iter(train_loader))
         print('测试数据载入完成...')
 
         # ------------------------------------#
@@ -179,31 +180,31 @@ if __name__ == "__main__":
 
         # 学习率和优化策略
         learning_rate = args.lr
-        optimizer = torch.optim.Adam(model["fusion_model"], learning_rate, weight_decay=5e-4)
+        optimizer = torch.optim.Adam(model["fusion_model"].parameters(), learning_rate, weight_decay=5e-4)
         lr_scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=1, gamma=0.9)
 
         # 模型参数
         assert args.resume_nestfuse is not None, "lack of nestfuse weights"
         print('Resuming, initializing auto-encoder using weight from {}.'.format(args.resume_nestfuse))
-        print('Loading weights into state dict...')
         # 读取训练好的模型参数
         checkpoint = torch.load(args.resume_nestfuse, map_location=device)
         model["nest_model"].encoder.load_state_dict(checkpoint['encoder'])
         model["nest_model"].decoder_train.load_state_dict(checkpoint['decoder'])
         model["nest_model"].eval()
+        print('加载AutoEncoder部分权重完成。')
 
         if args.resume_rfn is not None:
             print('Resuming, initializing fusion net using weight from {}.'.format(args.resume_rfn))
-            print('Loading weights into state dict...')
             # 读取训练好的模型参数
             checkpoint = torch.load(args.resume_rfn, map_location=device)
             model["fusion_model"].load_state_dict(checkpoint['model'])
             # optimizer.load_state_dict(checkpoint['optimizer'])
             init_epoch = checkpoint['epoch']
+            print('加载 RFN 部分权重完成。')
         else:
             weights_init(model["fusion_model"])
             init_epoch = 0
-        print('网络模型及优化器构建完成...')
+            print('初始化 RFN 部分权重完成。')
 
         # ------------------------------------#
         #   训练设置

@@ -16,32 +16,32 @@ from utils.util_device import device_on
 
 def set_args():
     # 创建ArgumentParser()对象
-    parser = argparse.ArgumentParser(description="模型参数设置")
+    parser = argparse.ArgumentParser(description="RFN-Nest模型参数设置")
 
     # 调用add_argument()方法添加参数
     # parser.add_argument('--random_seed', type=int, default=42, help="random seed")
     # parser.add_argument('--name', default="Cat2eacher", help="Coder Name")
     # 数据集相关参数
     parser.add_argument('--RFN',
-                        default=False, type=bool, help='判断训练阶段')
+                        default=True, type=bool, help='判断训练阶段')
     parser.add_argument('--image_path_autoencoder',
-                        default=r'E:/project/Image_Fusion/DATA/COCO/train2017', type=str, help='数据集路径')
+                        default=r'../dataset/COCO_train2014', type=str, help='数据集路径')
     parser.add_argument('--image_path_rfn',
-                        default=r'E:/project/Image_Fusion/DATA/RoadScene_dataset', type=str, help='数据集路径')
+                        default=r'../dataset/KAIST', type=str, help='数据集路径')
     parser.add_argument('--gray',
                         default=True, type=bool, help='是否使用灰度模式')
     parser.add_argument('--train_num',
-                        default=4, type=int, help='用于训练的图像数量')
+                        default=95000, type=int, help='用于训练的图像数量')
     # 训练相关参数
     parser.add_argument('--deepsupervision', default=False, type=bool, help='是否深层监督多输出')
     parser.add_argument('--resume_nestfuse',
-                        default=None, type=str, help='导入已训练好的模型路径')
+                        default="runs/train_autoencoder_byCOCO2014/checkpoints/epoch003-loss0.003.pth", type=str, help='导入已训练好的模型路径')
     parser.add_argument('--resume_rfn',
                         default=None, type=str, help='导入已训练好的模型路径')
     parser.add_argument('--device', type=str, default=device_on(), help='训练设备')
-    parser.add_argument('--batch_size', type=int, default=2, help='input batch size, default=4')
+    parser.add_argument('--batch_size', type=int, default=4, help='input batch size, default=4')
     parser.add_argument('--num_workers', type=int, default=0, help='载入数据集所调用的cpu线程数')
-    parser.add_argument('--num_epochs', type=int, default=2, help='number of epochs to train for, default=10')
+    parser.add_argument('--num_epochs', type=int, default=4, help='number of epochs to train for, default=10')
     parser.add_argument('--lr', type=float, default=1e-4, help='select the learning rate, default=1e-2')
     # 打印输出
     parser.add_argument('--output', action='store_true', default=True, help="shows output")
