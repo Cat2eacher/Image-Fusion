@@ -11,7 +11,7 @@ import torch
 import cv2 as cv
 from PIL import Image
 from torchvision import transforms
-from IFCNN.models import fuse_model
+from models import fuse_model
 
 IMG_EXTENSIONS = [
     '.jpg', '.JPG', '.jpeg', '.JPEG',
@@ -277,9 +277,9 @@ if __name__ == '__main__':
     #   单对图像融合
     # ---------------------------------------------------#
     if True:
-        image1_path = "../fusion_test_data/IVDataset/Camp_IR.png"
-        image2_path = "../fusion_test_data/IVDataset/Camp_Vis.png"
-        result_path = '../fusion_result/pair'
+        image1_path = "../data_test/IVDataset/Camp_IR.png"
+        image2_path = "../data_test/IVDataset/Camp_Vis.png"
+        result_path = '../data_result/pair'
         if not os.path.exists(result_path):
             os.makedirs(result_path)
 

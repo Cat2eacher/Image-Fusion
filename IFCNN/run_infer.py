@@ -49,7 +49,7 @@ if __name__ == '__main__':
                 mean = [0.485, 0.456, 0.406]  # normalization parameters
                 std = [0.229, 0.224, 0.225]
 
-                root = os.path.join("fusion_test_data", dataset + "Dataset")
+                root = os.path.join("data_test", dataset + "Dataset")
 
                 filename = 'lytro-{:02}'.format(index + 1)
                 image_path1 = os.path.join(root, '{0}-A.jpg'.format(filename))
@@ -61,7 +61,7 @@ if __name__ == '__main__':
                 mean = [0, 0, 0]  # normalization parameters
                 std = [1, 1, 1]
 
-                root = os.path.join("fusion_test_data", dataset + "Dataset")
+                root = os.path.join("data_test", dataset + "Dataset")
                 filename = IV_filenames[index]
                 image_path1 = os.path.join(root, '{0}_Vis.png'.format(filename))
                 image_path2 = os.path.join(root, '{0}_IR.png'.format(filename))
@@ -80,7 +80,7 @@ if __name__ == '__main__':
             Fusion_image = fusion_instance.postprocess_image(Fusion_tensor, mean, std)
             # save fused images
             if is_save:
-                result_path = os.path.join("fusion_result", defaults["fuse_scheme"] + '-' + dataset)
+                result_path = os.path.join("data_result", defaults["fuse_scheme"] + '-' + dataset)
                 if not os.path.exists(result_path):
                     os.makedirs(result_path)
                 filename = defaults["fuse_scheme"] + '-' + filename
