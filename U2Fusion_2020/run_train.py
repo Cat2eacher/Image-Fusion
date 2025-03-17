@@ -2,7 +2,7 @@
 """
 @dec:This script defines the training procedure of U2Fusion
 @Writer: CAT
-@Date: 2024/04/02
+@Date: 2025/03/17
 """
 import os
 import torch

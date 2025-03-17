@@ -1,29 +1,60 @@
 # U2Fusion
 
-* U2Fusion 的 PyTorch 实现。只用于多模态融合（红外可见光融合）任务，没有EWC相关的代码。
+---
 
-* 论文地址：
-  - [IEEE](https://arxiv.org/abs/2007.00328)
+### The re-implementation of TPAMI 2020 U2Fusion paper idea
 
-* 参考项目：
+#### framework
+![](figure/framework.png)
+
+#### DenseNet
+![](figure/DenseNet.png)
+
+#### FeatureExtraction
+![](figure/FeatureExtraction.png)
+
+This code is based on [Xu H , Ma J , Jiang J , et al."U2Fusion: A Unified Unsupervised Image Fusion Network" in IEEE Transactions on Pattern Analysis and Machine Intelligence, 2020.](https://ieeexplore.ieee.org/abstract/document/9151265)
+
+---
+
+## Description 描述
+
+- **基础框架：** CNN
+- **任务场景：** 通用图像融合
+- **项目描述：** U2Fusion 的 PyTorch 实现。只用于多模态融合（红外可见光融合）任务，没有EWC相关的代码。
+- **论文地址：**
+  - [IEEEXplore](https://ieeexplore.ieee.org/document/9151265)
+- **参考项目：**
   - [hanna-xu/U2Fusion](https://github.com/hanna-xu/U2Fusion) 官方代码用tensorflow实现。
   - [hanna-xu/RoadScene](https://github.com/hanna-xu/RoadScene) 论文提出的RoadScene数据集。
   - [ytZhang99/U2Fusion-pytorch](https://github.com/ytZhang99/U2Fusion-pytorch) 论文主要参考。
 
+---
 
-## 文件结构
+## Idea 想法
+  - 用于各种图像融合任务的统一框架：统一，无监督，端到端
+  - 引入信息测量和信息保留度的概念：特征提取，信息度量，得到的信息保留度作为损失函数的权重项
+  - 针对多任务图像融合，采取连续学习-弹性权重整合（elastic weight consolidation，EWC）方法
+
+---
+
+## Structure 文件结构
+
 ```shell
-├─fusion_test_data              # 用于测试的不同图片
+├─data_test              # 用于测试的不同图片
 │  ├─Road          	  	# Gray  可见光+红外
 │  └─Tno           		# Gray  可见光+红外
 │ 
-├─fusion_result    # run_fusion.py 的运行结果。使用训练好的权重对fusion_test_data内图像融合结果 
-│ 
-├─models                  
-│  └─DenseNet.py                   # 网络模型
+├─data_result     # run_infer.py 的运行结果。使用训练好的权重对data_test内图像融合结果 
+│  ├─pair           # 单对图像融合结果
+│  ├─Road_fusion
+│  └─TNO_fusion
+|
+├─models                        # 网络模型
+│  └─DenseNet
 │ 
 ├─runs              # run_train.py 的运行结果
-│  └─train_04-02_14-43
+│  └─ttrain_04-02_14-43
 │     ├─checkpoints # 模型权重
 │     └─logs        # 用于存储训练过程中产生的Tensorboard文件
 |
@@ -33,12 +64,11 @@
 │  ├─util_fusion.py             # 模型推理
 │  ├─util_loss.py            	# 结构误差损失函数
 │  ├─util_train.py            	# 训练用相关函数
-│  ├─utils.py            	# 其他功能函数
-│  └─vgg.py                   # VGG特征提取
+│  └─utils.py                   # 其他功能函数
 │ 
 ├─configs.py 	    # 模型训练超参数
 │ 
-├─run_fusion.py   # 该文件使用训练好的权重将test_data内的测试图像进行融合
+├─run_infer.py   # 该文件使用训练好的权重将test_data内的测试图像进行融合
 │ 
 └─run_train.py      # 该文件用于训练模型
 
@@ -46,7 +76,8 @@
 
 
 
-## 使用说明
+---
+## Usage 使用说明
 
 ### Trainng
 
