@@ -1,20 +1,22 @@
 # -*- coding: utf-8 -*-
 """
-@dec:This script defines the training procedure of U2Fusion
-@Writer: CAT
+@file name:run_train.py
+@desc: This script defines the training procedure of U2Fusion
+@Writer: Cat2eacher
 @Date: 2025/03/17
 """
-import os
-import torch
+
+
 import time
 from torch.utils.data import DataLoader
 from utils.utils import *
 from utils.util_dataset import BracketedDataset, image_ToTensor
-from utils.util_train import train_epoch, tensorboard_load, checkpoint
+from utils.util_train import train_epoch, tensorboard_log, checkpoint_save
 from utils.util_loss import *
 from models import fuse_model
 from configs import set_args
 from torch.utils.tensorboard import SummaryWriter
+# from torch.utils.tensorboard import SummaryWriter
 
 '''
 /****************************************************/
@@ -23,14 +25,14 @@ from torch.utils.tensorboard import SummaryWriter
 '''
 if __name__ == "__main__":
     print("==================模型超参数==================")
-    run_dir, checkpoint_dir = create_run_directory()
     args = set_args()
+    run_dir, checkpoints_dir, logs_dir = create_run_directory(args)
     print("==================模型超参数==================")
-    # ----------------------------------------------------#
+    # -------------------------------------------#
     #           数据集
-    # ----------------------------------------------------#
+    # -------------------------------------------#
     train_dataset = BracketedDataset(root=args.image_path,
-                                     image_dir=["crop_LR_visible", "crop_infrared"],
+                                     image_dir=["1", "2"],
                                      patch_size=64,
                                      transform=image_ToTensor,
                                      file_num=args.train_num)
@@ -38,40 +40,36 @@ if __name__ == "__main__":
                               num_workers=args.num_workers)
     print('训练数据载入完成...')
 
-    # ----------------------------------------------------#
+    # -------------------------------------------#
     #           device
-    # ----------------------------------------------------#
+    # -------------------------------------------#
     device = args.device
     print("设备就绪...")
-    # ----------------------------------------------------#
+    # -------------------------------------------#
     #           网络模型
-    # ----------------------------------------------------#
+    # -------------------------------------------#
     model_name = "DenseNet"  # 模型初始化
     model = fuse_model(model_name, input_nc=1, output_nc=1)
     model.to(device)  # 模型部署
 
-    # ----------------------------------------------------#
+    # -------------------------------------------#
     #           训练过程
-    # ----------------------------------------------------#
+    # -------------------------------------------#
     # 训练过程记录
-    train_time = datetime.datetime.now().strftime("%m%d%H%M")
-    logs_name = "logs" + 'epoch={}'.format(args.num_epochs)
-    logs_path = os.path.join(run_dir, logs_name)
-    writer = SummaryWriter(logs_path)
-    print('Tensorboard 构建完成，进入路径：' + logs_path)
+    writer = SummaryWriter(logs_dir)
+    print('Tensorboard 构建完成，进入路径：' + logs_dir)
     print('然后使用该指令查看训练过程：tensorboard --logdir=./')
 
     # 导入测试图像
-    for i, image_batch in enumerate(train_loader):
-        test_batch = image_batch
-        break
+    # for i, image_batch in enumerate(train_loader):
+    #     test_batch = image_batch
+    #     break
+    test_image = next(iter(train_loader))
     print('测试数据载入完成...')
 
     if True:
         # 训练设置
         num_epochs = args.num_epochs
-
-        # 损失函数loss_fn
         # 损失函数loss_fn
         mse_loss = torch.nn.MSELoss().to(device)  # mean square error
         ssim_loss = msssim  # 结构误差损失
@@ -109,16 +107,16 @@ if __name__ == "__main__":
             # =====================valid============================
             # 无验证集，替换成在tensorboard中测试
             # valid_loss = valid_epoch(model_train, device, valid_loader, criterion)
-            tensorboard_load(writer, model, train_loss, test_batch, device, epoch)
+            tensorboard_log(writer, model, train_loss, test_image, device, epoch)
             # =====================updateLR=========================
             lr_scheduler.step()
             # =====================checkpoint=======================
             if train_loss["total_loss"] < best_loss or epoch == 0:
                 best_loss = train_loss["total_loss"]
-                checkpoint(epoch, model, optimizer, lr_scheduler, checkpoint_dir, best_loss)
+                checkpoint_save(epoch, model, optimizer, lr_scheduler, checkpoints_dir, best_loss)
 
         writer.close()
         end_time = time.time()
         print('Finished Training')
-        print('训练耗时：', (end_time - start_time))
-        print('Best val loss: {:4f}'.format(best_loss))
+        print(f'训练耗时：{end_time - start_time:.2f}秒')
+        print('Best loss: {:4f}'.format(best_loss))
