@@ -9,7 +9,7 @@
 
 import time
 from torch.utils.data import DataLoader
-from utils.utils import *
+from utils.util import *
 from utils.util_dataset import BracketedDataset, image_ToTensor
 from utils.util_train import train_epoch, tensorboard_log, checkpoint_save
 from utils.util_loss import *

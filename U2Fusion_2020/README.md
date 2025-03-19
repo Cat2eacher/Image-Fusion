@@ -64,7 +64,7 @@ This code is based on [Xu H , Ma J , Jiang J , et al."U2Fusion: A Unified Unsupe
 │  ├─util_fusion.py             # 模型推理
 │  ├─util_loss.py            	# 结构误差损失函数
 │  ├─util_train.py            	# 训练用相关函数
-│  └─utils.py                   # 其他功能函数
+│  └─util.py                   # 其他功能函数
 │ 
 ├─configs.py 	    # 模型训练超参数
 │ 

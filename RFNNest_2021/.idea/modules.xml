@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../RFNNest_2021/.idea/RFNNest.iml" filepath="$PROJECT_DIR$/../RFNNest_2021/.idea/RFNNest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/RFNNest_2021.iml" filepath="$PROJECT_DIR$/.idea/RFNNest_2021.iml" />
     </modules>
   </component>
 </project>

@@ -3,7 +3,7 @@ import numpy as np
 import torch
 import torchvision
 from tqdm import tqdm
-from .utils import get_lr, AdaptiveWeights
+from .util import get_lr, AdaptiveWeights
 
 # 这里信息保留度的计算要单独指定一下环境
 # 写在 train_epoch 函数外是为了避免每次运行一次训练函数都重新初始化一次
