@@ -79,7 +79,7 @@ This code is based on [Xu H , Ma J , Jiang J , et al."U2Fusion: A Unified Unsupe
 ---
 ## Usage 使用说明
 
-### Trainng
+### Trainng 训练
 
 #### 从零开始训练
 
@@ -97,13 +97,15 @@ This code is based on [Xu H , Ma J , Jiang J , et al."U2Fusion: A Unified Unsupe
 | learning_rate    | 训练初始学习率                                                                            |
 | num_epochs       | 训练轮数                                                                               |
 
+* 为了保证计算过程中所有张量都在同一设备上，避免了跨设备操作可能导致的性能问题和潜在错误。尤其要注意AdaptiveWeights信息保留度的计算位置。
+* 因此在训练文件 utils/util_train.py 开头要单独制定一下device
 * 设置完成参数后，运行**run_train.py**即可开始训练：
+* 记得数据集是RoadScene数据集哦
 
 ```python
     # 数据集相关参数
-    parser.add_argument('--image_path', default=r'E:/project/Image_Fusion/DATA/RoadScene_dataset', type=str, help='数据集路径')
-    parser.add_argument('--gray', default=True, type=bool, help='是否使用灰度模式')
-    parser.add_argument('--train_num', default=10000, type=int, help='用于训练的图像数量')
+    parser.add_argument('--image_path', default=r'E:\Git_Project\Image-Fusion\U2Fusion_2020\data_test\Road', type=str, help='数据集路径')
+    parser.add_argument('--train_num', default=40, type=int, help='用于训练的图像数量')
     # 训练相关参数
     parser.add_argument('--resume_path', default=None, type=str, help='导入已训练好的模型路径')
     parser.add_argument('--device', type=str, default=device_on(), help='训练设备')
@@ -172,19 +174,15 @@ Best val loss: 21.221090
 
 
 
-### Fuse Image
+### Infering 推理融合
 
-* 打开**run_fusion.py**文件，调整**defaults**参数
-  * 确定原图像路径和权重路径
+* 打开**run_infer.py**文件，调整**config**参数
+  * 确定权重路径和设备信息
   * 确定保存路径
-* 运行**run_fusion.py**
-* 你可以在运行窗口看到如下信息：
+* 运行**run_infer.py**
+* 需要注意的是，main函数是单对图像融合，main_batch函数是多对图像融合。具体融合过程在fusion.batch_process类方法中定义。
 
-```shell
-runs/train_02-22_07-29/checkpoints/epoch025-loss0.000.pth model loaded.
-载入数据...
-开始融合...
-```
+
 
 
 
